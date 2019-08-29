@@ -27,6 +27,9 @@
     "dev-serv": "json-server --watch db.json --port 2020",
     "devs-serv": "json-server --host 192.168.1.102 db.json --port 2020"
   },
+  "engines": {
+    "node": "10.16.0"
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
