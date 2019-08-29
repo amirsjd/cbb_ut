@@ -24,7 +24,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "run-serv": "json-server --watch db.json --port 2020"
+    "dev-serv": "json-server --watch db.json --port 2020",
+    "devs-serv": "json-server --host 192.168.1.103 db.json --port 2020"
   },
   "eslintConfig": {
     "extends": "react-app"
