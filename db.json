@@ -1,0 +1,45 @@
+{
+    "news": [
+        {
+            "id": 0,
+            "title": "Site created!",
+            "content": "Some random content..."
+        },
+        {
+            "id": 0,
+            "title": "Site created!",
+            "content": "Some random content..."
+        },
+        {
+            "id": 0,
+            "title": "Site created!",
+            "content": "Some random content..."
+        },
+        {
+            "id": 0,
+            "title": "Site created!",
+            "content": "Some random content..."
+        },
+        {
+            "id": 0,
+            "title": "Site created!",
+            "content": "Some random content..."
+        },
+        {
+            "id": 0,
+            "title": "Site created!",
+            "content": "Some random content..."
+        },
+        {
+            "id": 0,
+            "title": "Site created!",
+            "content": "Some random content..."
+        }
+    ],
+    "users": [
+        {
+
+        }
+    ]
+
+}

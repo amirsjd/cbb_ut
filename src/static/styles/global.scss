@@ -1,0 +1,47 @@
+@import './constants.scss';
+
+body {
+  margin: 0;
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", 
+    "Roboto", "Dosis", "Lexend Giga", "Montserrat", "Quicksand", "Darker Grotesque",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Oxygen",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+a {
+  color: $textColor;
+  opacity: 0.85;
+  text: { decoration: none; }
+
+  &:hover {
+    opacity: 1;
+    color: $focusColor;
+    text: { decoration: none; }
+  }
+}
+
+::-webkit-scrollbar {
+
+  width: 5px;
+
+  &-track {
+    background: rgb(0, 0, 0)
+  }
+
+  &-thumb {
+    background: rgba($color: $themeColor, $alpha: 0.1); 
+    border-radius: 5px;
+  }
+
+  &-thumb:hover {
+    background: rgba($color: $focusColor, $alpha: 0.3); 
+  }
+}

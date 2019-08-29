@@ -1,0 +1,18 @@
+// buttons
+.roundButton {
+    cursor: pointer;
+    font: {
+        weight: lighter;
+        size: 0.85rem;
+        family: 'Montserrat', sans-serif;
+    }
+    margin: 5px;
+
+    padding: 8px 12px;
+    border: { 
+        radius: 25px;
+        width: 1.5px;
+        color: white;
+        style: dashed;
+    }
+}

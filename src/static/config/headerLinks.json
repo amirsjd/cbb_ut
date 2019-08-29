@@ -1,0 +1,37 @@
+[
+    {
+        "title": "Home",
+        "linkTo": "home",
+        "show": true
+    },
+    {
+        "title": "People",
+        "linkTo": "people",
+        "show": true
+    },
+    {
+        "title": "Tools",
+        "linkTo": "tools",
+        "show": true
+    },
+    {
+        "title": "News",
+        "linkTo": "news",
+        "show": true
+    },
+    {
+        "title": "Blog",
+        "linkTo": "blog",
+        "show": true
+    },
+    {
+        "title": "Contact",
+        "linkTo": "contact",
+        "show": false
+    },
+    {
+        "title": "About",
+        "linkTo": "about",
+        "show": false
+    }
+]
