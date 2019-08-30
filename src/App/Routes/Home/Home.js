@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react'
-//import { Transition, animated } from 'react-spring/renderprops'
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons'
 
 import './home.scss'

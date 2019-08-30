@@ -33,8 +33,6 @@ class Page extends PureComponent {
 
     render() {
 
-        console.log(this.props.data.news)
-
         return (
             <PageLayout {...this.config} layers={this.layers}>
                 <div onClick={() => this.props.setPlxProps('SCROLL',this.state.offset + 1)}>Scroll Down</div>

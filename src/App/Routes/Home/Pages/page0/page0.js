@@ -17,13 +17,10 @@ class Page0 extends PureComponent {
 
     render() {
 
-        const { percentage, setPlxProps } = this.props
-        const opacity = 1 - percentage
-
+        const { setPlxProps } = this.props
         return (
             <PageLayout {...this.config} 
-                layers={layers}
-                style={{ opacity }} >
+                layers={layers} >
 
                 <div className="PageContent0" >
                     <div>

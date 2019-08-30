@@ -29,7 +29,6 @@ export default [
             }} />
     },
     {
-        img: '',
         speed: 0.5,
         offset: 0,
         children: 
@@ -48,7 +47,6 @@ export default [
     {
         speed: -0.5,
         offset: 0,
-        factor: 1,
         children: 
             <img alt="" src="/assets/Home/Tcell.png"
                 style={{

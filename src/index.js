@@ -14,8 +14,6 @@ import './static/styles/styles.scss'
 const createStoreWithMiddleware = 
      applyMiddleware(promiseMiddleware)(createStore)
 
-console.log(process.env)
-
 ReactDOM.render(
     <Provider store={createStoreWithMiddleware(reducers)} >
         <App />
