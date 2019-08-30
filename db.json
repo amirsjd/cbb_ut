@@ -1,39 +1,56 @@
 {
+    "posts": [
+        {
+            "id": "dfvsvascascxzsdc",
+            "title": "blog post 1",
+            "body": "<b> blog post 1 created </b>"
+        },
+        {
+            "id": "gfdhersbsfghdfgv",
+            "title": "blog post 1",
+            "body": "<b> blog post 1 created </b>"
+        }
+    ],
     "news": [
         {
-            "id": 0,
+            "id": "ymdftgbtdsrfbfdv",
             "title": "Site created!",
-            "content": "Some random content..."
+            "body": "Some random content...",
+            "config": {
+                "enabled": true,
+                "isPinned": true
+            },
+            "authorId": "hayyaun"
         },
         {
-            "id": 0,
+            "id": "ewirjfoosefpjoe",
             "title": "Site created!",
-            "content": "Some random content..."
+            "body": "Some random body..."
         },
         {
-            "id": 0,
+            "id": "poogtmknpmomomv",
             "title": "Site created!",
-            "content": "Some random content..."
+            "body": "Some random body..."
         },
         {
-            "id": 1,
+            "id": "qwmwqegrmklmowe",
             "title": "Site created!",
-            "content": "Some random content..."
+            "body": "Some random body..."
         },
         {
-            "id": 0,
+            "id": "wqpidoawxkdwdao",
             "title": "Site created!",
-            "content": "Some random content..."
+            "body": "Some random body..."
         },
         {
-            "id": 0,
+            "id": "tuihnuhbdsuygvy",
             "title": "Site created!",
-            "content": "Some random content..."
+            "body": "Some random body..."
         },
         {
-            "id": 0,
+            "id": "oprkpvrdiojedfw",
             "title": "Site created!",
-            "content": "Some random content..."
+            "body": "Some random body..."
         }
     ],
     "users": [

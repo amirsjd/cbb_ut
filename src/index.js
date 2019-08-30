@@ -8,15 +8,17 @@ import reducers from './reducers'
 import App from './App/App'
 
 //import * as serviceWorker from './serviceWorker'
-import { googleAuth } from './firebase/firebase'
+//import { googleAuth } from './firebase/firebase'
 import './static/styles/styles.scss'
 
 const createStoreWithMiddleware = 
      applyMiddleware(promiseMiddleware)(createStore)
 
+console.log(process.env)
+
 ReactDOM.render(
     <Provider store={createStoreWithMiddleware(reducers)} >
-        <App user={googleAuth} />
+        <App />
     </Provider>
 , document.getElementById('root'))
 
