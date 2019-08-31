@@ -1,19 +1,19 @@
 {
     "People": [
         {
-            "displayName": "Hayyan Hami",
-            "coverImage": "",
+            "name": "Hayyan Hami",
+            "image": "",
             "title": "developer",
             "birthday": "",
             "biography": "",
             "newsPosts": 0,
             "blogPosts": 0
-            
+
         }
     ],
     "Tools": [
         {
-
+            
         }
     ],
     "blog": [

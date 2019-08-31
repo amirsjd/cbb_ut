@@ -38,7 +38,7 @@ export default [
                     left: '50%',
                     top: '100vh',
                     transform: 'translate(-50%,-100%)',
-                    height: '10vw',
+                    height: '8em',
                     zIndex: 20,
                     filter: 'brightness(90%)',
                     opacity: 0.8,
@@ -50,7 +50,7 @@ export default [
         children: 
             <img alt="" src="/assets/Home/Tcell.png"
                 style={{
-                    width: '24vw',
+                    width: '20em',
                     position: 'absolute',
                     top: '50%',
                     left: '50%',

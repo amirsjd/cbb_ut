@@ -1,5 +1,5 @@
 import React from 'react';
-import NewsSliderItem from './NewsSliderItem'
+import NewsSliderItem from './newsSliderItem'
 
 const NewsSlider = (props) => {
 

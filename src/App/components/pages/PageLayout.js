@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
 import { ParallaxLayer } from 'react-spring/renderprops-addons'
 
-import '../home.scss'
+import './page-layout.scss'
 
 class PageLayout extends Component {
 
     renderBackgroundLayers = () => {
         return this.props.layers.map((layer, i) => 
             {
-                const { style, speed, offset, children, factor } = layer
+                const { style, speed, children, factor } = layer
                 return (
                     <ParallaxLayer 
                         key={i} 
                         style={style} 
                         speed={speed}
-                        offset={offset}
+                        offset={this.props.offset}
                         factor={factor}
-                        className="Layer-each">
+                        className="pageLayer">
 
                         {children}
                     </ParallaxLayer>
@@ -36,7 +36,7 @@ class PageLayout extends Component {
                 <ParallaxLayer 
                     offset={this.props.offset} 
                     speed={this.props.speed} 
-                    className="Layer-content"
+                    className="pageLayer-content"
                     style={this.props.style}>
                     
                     {this.props.children}

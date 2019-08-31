@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react'
 
-import './page-0.scss'
-import PageLayout from '../PageLayout'
+import './desc-page.scss'
+import PageLayout from '../../../../components/pages/PageLayout'
 import layers from './layers'
 
-class Page0 extends PureComponent {
+class Page extends PureComponent {
 
     config = {
         offset: this.props.offset,
@@ -19,26 +19,25 @@ class Page0 extends PureComponent {
 
         const { setPlxProps } = this.props
         return (
-            <PageLayout {...this.config} 
-                layers={layers} >
+            <PageLayout {...this.config} layers={layers} >
 
-                <div className="PageContent0" >
+                <div className="Home-descPage-content" >
                     <div>
                         <span>Complex Biological Systems</span>
                         <span>& Bioinformatic</span> 
                     </div>
 
-                    <div className="roundButton Button-LearnMore" >
+                    <div className="roundButton Home-descPage-learnMoreButton" >
                         Learn More
                     </div>
 
-                    <div className="roundButton Button-About" >
+                    <div className="roundButton Home-descPage-aboutButton" >
                         About Us
                     </div>
                 </div>
 
                 <div 
-                    className="ScrollDown" 
+                    className="Home-descPage-scrollDownButton" 
                     onClick={() => this.scrollDown(setPlxProps)}>
 
                     <span>Scroll Down</span>
@@ -49,4 +48,4 @@ class Page0 extends PureComponent {
     }
 }
 
-export default Page0;
+export default Page;

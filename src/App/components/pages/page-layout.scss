@@ -1,0 +1,10 @@
+.pageLayer {
+
+    display: inline-flex;
+
+    &-content {
+        padding: 102px;
+        height: 100vh;
+        width: 100vw;
+    }
+}

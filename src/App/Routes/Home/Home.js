@@ -1,24 +1,14 @@
 import React, { PureComponent } from 'react'
-import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons'
+import { Parallax } from 'react-spring/renderprops-addons'
 
 import './home.scss'
-
-import Share from '../../components/widgets/Share/share'
-import Footer from '../../components/bars/Footer/footer'
-
-import Welcome from './Pages/page0/page0'
-import RecentNews from './Pages/page1/page1'
-import Tools from './Pages/page2/page2'
-import Slide from './Pages/page3/page3'
-
-
-const pageTitles = ['Welcome', 'Recent', 'Tools', 'Slide', 'CBB']
-const pagesList = [Welcome, RecentNews, Tools, Slide]
+import Pages, { pageTitles } from './Pages/Pages'
+import Share from '../../components/widgets/Share/share' 
 
 class Home extends PureComponent {
 
     config = {
-        hasNavBar: true,
+        hasNavBar: true, 
         hasTitleBar: true,
         hasScrollBar: true,
         pages: 5
@@ -56,7 +46,7 @@ class Home extends PureComponent {
         })
     }
 
-    setPlxProps = (action, args) => {
+    setPlxProps = (action = null, args = null) => {
         switch(action) {
             case 'SCROLL': 
                 this.parallax.scrollTo(args)
@@ -80,16 +70,6 @@ class Home extends PureComponent {
         )
     }
 
-    renderPages = () => {
-        const props = { 
-            setPlxProps: this.setPlxProps, 
-            //percentage: this.status.percentage
-        }
-        return pagesList.map((Page, i) => (
-            <Page offset={i} key={i} {...props}/>
-        ))
-    }
-
     render() {
         return (
             <div className="Home">
@@ -105,11 +85,10 @@ class Home extends PureComponent {
                         position: 'relative'
                     }}>
 
-                        {this.renderPages()}
-
-                        <ParallaxLayer offset={5}>
-                            <Footer />
-                        </ParallaxLayer>
+                        <Pages 
+                            {...this.config} 
+                            {...this.status}
+                            setPlxProps={this.setPlxProps} />
 
                 </Parallax>
 

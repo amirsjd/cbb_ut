@@ -3,9 +3,10 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 
 import { newsList as getNews } from '../../../../../actions'
-import NewsSlider from '../../../../components/sliders/NewsSlider/NewsSlider'
+import NewsSlider from './NewsSlider/newsSlider'
 
-import PageLayout from '../PageLayout';
+import layers from './layers'
+import PageLayout from '../../../../components/pages/PageLayout';
 
 class Page extends PureComponent {
 
@@ -14,19 +15,6 @@ class Page extends PureComponent {
         speed: 0.2
     }
 
-    layers = [ 
-        {
-            speed: 0,
-            offset: this.config.offset,
-            style: {
-                height: '100vh',
-                width: '100vw',
-                backgroundImage: 'linear-gradient(#8474A1,#6EC6CA)',
-                opacity: 1
-            }
-        },
-    ]
-
     componentWillMount() {
         this.props.getNews()
     }
@@ -34,7 +22,7 @@ class Page extends PureComponent {
     render() {
 
         return (
-            <PageLayout {...this.config} layers={this.layers}>
+            <PageLayout {...this.config} layers={layers}>
                 <div onClick={() => this.props.setPlxProps('SCROLL',this.state.offset + 1)}>Scroll Down</div>
                 <div className="Title">Recent News</div> 
                 <NewsSlider news={this.props.data.news} />
