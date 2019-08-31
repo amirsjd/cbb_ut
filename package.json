@@ -21,11 +21,11 @@
     "typescript": "^3.5.3"
   },
   "scripts": {
-    "start": "concurrently \"react-scripts start\" \"npm run dev-serv\" ",
+    "start": "set PORT=8080 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "react-scripts start",
+    "dev": "concurrently \"npm start\" \"npm run devs-serv\"",
     "dev-serv": "json-server --watch db.json --port 2020",
     "devs-serv": "json-server --host 192.168.1.102 db.json --port 2020"
   },

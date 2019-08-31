@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const URL = 'http://192.168.1.102:2020'
+const URL = 'http://cbb-ut.gigfa.com/wp-json'
 
 // getters
 export function newsList() {

@@ -1,5 +1,22 @@
 {
-    "posts": [
+    "People": [
+        {
+            "displayName": "Hayyan Hami",
+            "coverImage": "",
+            "title": "developer",
+            "birthday": "",
+            "biography": "",
+            "newsPosts": 0,
+            "blogPosts": 0
+            
+        }
+    ],
+    "Tools": [
+        {
+
+        }
+    ],
+    "blog": [
         {
             "id": "dfvsvascascxzsdc",
             "title": "blog post 1",
@@ -52,11 +69,5 @@
             "title": "Site created!",
             "body": "Some random body..."
         }
-    ],
-    "users": [
-        {
-
-        }
     ]
-
 }
