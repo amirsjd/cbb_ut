@@ -28,9 +28,11 @@ class Page extends PureComponent {
             <PageLayout {...this.config} layers={layers}>
                 <div className="RecentPage-title">Recent News</div> 
                 <NewsSlider news={this.props.data.news} />
-                <div className="RecentPage-seeMoreButton">
-                    <Link to="/news">View More</Link> 
-                </div> 
+                <Link to="/news">
+                    <div className="roundButton RecentPage-seeMoreButton">
+                        View More
+                    </div> 
+                </Link>
             </PageLayout>
         );
     }
