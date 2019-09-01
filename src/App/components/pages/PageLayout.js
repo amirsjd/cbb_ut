@@ -5,7 +5,7 @@ import './page-layout.scss'
 
 class PageLayout extends Component {
 
-    renderBackgroundLayers = () => {
+    renderBgLayers = () => {
         return this.props.layers.map((layer, i) => 
             {
                 const { style, speed, children, factor } = layer
@@ -30,12 +30,12 @@ class PageLayout extends Component {
             <>
                 {
                     this.props.layers && 
-                    this.renderBackgroundLayers()
+                    this.renderBgLayers()
                 }
 
                 <ParallaxLayer 
                     offset={this.props.offset} 
-                    speed={this.props.speed} 
+                    speed={0} 
                     className="pageLayer-content"
                     style={this.props.style}>
                     

@@ -2,8 +2,8 @@
 export default function(state = {}, action) {
     
     switch(action.type) {
-        case 'NEWS': 
-            return {...state, news: action.payload}
+        case 'INFO': 
+            return {...state, info: action.payload}
         default:
             return state
     }

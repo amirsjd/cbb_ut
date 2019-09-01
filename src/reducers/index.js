@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux'
 
 //// reducers
+import info from './info_reducer'
 import news from './news_reducer'
 
 const rootReducer = combineReducers({
-    news
+    info, news
 })
 
 export default rootReducer 

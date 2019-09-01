@@ -1,0 +1,13 @@
+.RecentPage {
+    &-title {
+        text-align: center;
+        margin: 32px 0 10px 0;
+        font-size: 26px;
+        font-weight: bold;
+        text-shadow: 0 0 24px rgba(0, 0, 0, 0.65);
+    }
+    &-seeMoreButton {
+        text-align: end;
+        padding-right: 20px;
+    }
+}

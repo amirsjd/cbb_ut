@@ -22,6 +22,7 @@ class Home extends PureComponent {
     }
 
     handleScroll = () => {
+
         const scrollTop = this.parallax.current
         const pageHeight = this.parallax.space
         const pageTop = scrollTop % pageHeight
@@ -47,6 +48,7 @@ class Home extends PureComponent {
     }
 
     setPlxProps = (action = null, args = null) => {
+        
         switch(action) {
             case 'SCROLL': 
                 this.parallax.scrollTo(args)
@@ -64,6 +66,7 @@ class Home extends PureComponent {
     }
 
     componentDidMount() {
+        
         this.parallax.container
         .addEventListener('scroll', () => 
             this.handleScroll()

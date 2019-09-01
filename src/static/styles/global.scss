@@ -18,7 +18,7 @@ code {
 
 a {
   color: $textColor;
-  opacity: 0.85;
+  opacity: 0.9;
   text: { decoration: none; }
 
   &:hover {
@@ -31,14 +31,15 @@ a {
 ::-webkit-scrollbar {
 
   width: 5px;
+  height: 5px;
 
   &-track {
-    background: rgb(0, 0, 0)
+    background: rgba(0, 0, 0, 0)
   }
 
   &-thumb {
     background: rgba($color: $themeColor, $alpha: 0.1); 
-    border-radius: 5px;
+    border-radius: 10px;
   }
 
   &-thumb:hover {

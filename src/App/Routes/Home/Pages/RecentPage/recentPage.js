@@ -1,8 +1,11 @@
 import React, { PureComponent } from 'react';
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 
-import { newsList as getNews } from '../../../../../actions'
+import './recent-page.scss'
+
+import { getPostsList } from '../../../../../actions'
 import NewsSlider from './NewsSlider/newsSlider'
 
 import layers from './layers'
@@ -16,17 +19,18 @@ class Page extends PureComponent {
     }
 
     componentWillMount() {
-        this.props.getNews()
+        this.props.getPostsList('NEWS')
     }
 
     render() {
 
         return (
             <PageLayout {...this.config} layers={layers}>
-                <div onClick={() => this.props.setPlxProps('SCROLL',this.state.offset + 1)}>Scroll Down</div>
-                <div className="Title">Recent News</div> 
+                <div className="RecentPage-title">Recent News</div> 
                 <NewsSlider news={this.props.data.news} />
-                <div className="ViewMoreNews">View More</div> 
+                <div className="RecentPage-seeMoreButton">
+                    <Link to="/news">View More</Link> 
+                </div> 
             </PageLayout>
         );
     }
@@ -40,7 +44,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({
-        getNews
+        getPostsList
     }, dispatch)
 }
 
