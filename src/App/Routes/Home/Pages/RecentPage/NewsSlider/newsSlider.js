@@ -17,7 +17,7 @@ const NewsSlider = (props) => {
     )
 
     return (
-        <div className="NewsSlider" >
+        <div className="NewsSlider scrollableContainer" >
             {renderNews(props.news)} 
         </div>
     )

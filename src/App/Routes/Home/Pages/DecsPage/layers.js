@@ -4,7 +4,6 @@ export default [
     
     {
         speed: 0,
-        offset: 0,
         style: {
             position: 'absolute',
             height: '100vh',
@@ -14,7 +13,6 @@ export default [
     },
     {
         speed: 0.1,
-        offset: 0,
         children:
             <div style={{
                 width: '120%', height: '120%',
@@ -30,7 +28,6 @@ export default [
     },
     {
         speed: 0.5,
-        offset: 0,
         children: 
             <img alt="" src="/assets/Home/cell.png"
                 style={{
@@ -46,7 +43,6 @@ export default [
     },
     {
         speed: -0.5,
-        offset: 0,
         children: 
             <img alt="" src="/assets/Home/Tcell.png"
                 style={{

@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import { Parallax } from 'react-spring/renderprops-addons'
 
 import './home.scss'
+
 import Pages, { pageTitles } from './Pages/Pages'
 import Share from '../../components/widgets/Share/share' 
 
@@ -78,7 +79,7 @@ class Home extends PureComponent {
             <div className="Home">
                 
                 <Parallax
-                    className="HomePlx"
+                    className="HomePlx scrollableContainer"
                     ref={ref => this.parallax = ref}
                     pages={this.config.pages}
                     vertical
@@ -101,5 +102,6 @@ class Home extends PureComponent {
         )
     }
 }
+
 
 export default Home

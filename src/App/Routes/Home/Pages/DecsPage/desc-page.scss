@@ -1,4 +1,3 @@
-
 .Home-descPage {
     
     &-content {
@@ -42,7 +41,6 @@
         left: 50%;
         transform: translate(-50%,0%);
         cursor: pointer;
-
         display: block;
 
         text: {
@@ -50,6 +48,7 @@
             align: center;
             shadow: 0 0 8px  black;
         }
+
         font-weight: normal;
 
         i {

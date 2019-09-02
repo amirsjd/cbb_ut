@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 
+import { getPostsByCats } from '../../../../../actions'
+
+import PageLayout from '../../../../components/pages/PageLayout';
 import './recent-page.scss'
 
-import { getPostsList } from '../../../../../actions'
+import layers from './layers'
 import NewsSlider from './NewsSlider/newsSlider'
 
-import layers from './layers'
-import PageLayout from '../../../../components/pages/PageLayout';
-
-class Page extends PureComponent {
+class Page extends PureComponent { 
 
     config = {
         offset: 1,
@@ -19,34 +19,38 @@ class Page extends PureComponent {
     }
 
     componentWillMount() {
-        this.props.getPostsList('NEWS')
+        this.props.getPostsByCats(['NEWS'])
     }
 
     render() {
 
         return (
             <PageLayout {...this.config} layers={layers}>
-                <div className="RecentPage-title">Recent News</div> 
-                <NewsSlider news={this.props.data.news} />
+                <div className="Home-recentPage-title">
+                    Recent News
+                </div> 
+
+                <NewsSlider news={this.props.data.posts} />
+
                 <Link to="/news">
-                    <div className="roundButton RecentPage-seeMoreButton">
+                    <div className="roundButton Home-recentPage-seeMoreButton">
                         View More
                     </div> 
                 </Link>
             </PageLayout>
-        );
+        )
     }
 }
 
 const mapStateToProps = (state) => {
     return {
-        data: state.news
+        data: state.posts
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({
-        getPostsList
+        getPostsByCats
     }, dispatch)
 }
 

@@ -1,4 +1,7 @@
 import React, { PureComponent } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { getInfo } from '../../../../../actions'
 
 import './desc-page.scss'
 import PageLayout from '../../../../components/pages/PageLayout'
@@ -15,7 +18,14 @@ class Page extends PureComponent {
         setPlxProps('SCROLL', this.config.offset + 1)
     }
 
+    componentWillMount() {
+
+        this.props.getInfo()
+    }
+
     render() {
+
+        console.log(this.props.data)
 
         const { setPlxProps } = this.props
         return (
@@ -23,8 +33,7 @@ class Page extends PureComponent {
 
                 <div className="Home-descPage-content" >
                     <div>
-                        <span>Complex Biological Systems</span>
-                        <span>& Bioinformatic</span> 
+                        <span>{this.props.data.info && this.props.data.info.description}</span>
                     </div>
 
                     <div className="roundButton Home-descPage-learnMoreButton" >
@@ -32,7 +41,7 @@ class Page extends PureComponent {
                     </div>
 
                     <div className="roundButton Home-descPage-aboutButton" >
-                        About Us
+                        About Us 
                     </div>
                 </div>
 
@@ -48,4 +57,16 @@ class Page extends PureComponent {
     }
 }
 
-export default Page;
+const mapStateToProps = (state) => {
+    return {
+        data: state.info
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({
+        getInfo
+    }, dispatch)
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Page)
