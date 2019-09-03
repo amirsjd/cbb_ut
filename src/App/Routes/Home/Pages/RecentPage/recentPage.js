@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 
-import { getPostsByCats } from '../../../../../actions'
+import { getPostsByCat } from '../../../../../actions'
 
 import PageLayout from '../../../../components/pages/PageLayout';
 import './recent-page.scss'
@@ -14,12 +14,12 @@ import NewsSlider from './NewsSlider/newsSlider'
 class Page extends PureComponent { 
 
     config = {
-        offset: 1,
+        offset: this.props.offset,
         speed: 0.2
     }
 
     componentWillMount() {
-        this.props.getPostsByCats(['NEWS'])
+        this.props.getPostsByCat('NEWS')
     }
 
     render() {
@@ -30,10 +30,12 @@ class Page extends PureComponent {
                     Recent News
                 </div> 
 
-                <NewsSlider news={this.props.data.posts} />
+                <NewsSlider news={this.props.data.news} />
 
                 <Link to="/news">
-                    <div className="roundButton Home-recentPage-seeMoreButton">
+                    <div className="
+                        roundButton-filled 
+                        Home-recentPage-seeMoreButton" >
                         View More
                     </div> 
                 </Link>
@@ -50,7 +52,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({
-        getPostsByCats
+        getPostsByCat
     }, dispatch)
 }
 

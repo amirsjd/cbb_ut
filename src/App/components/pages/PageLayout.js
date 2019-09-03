@@ -8,13 +8,13 @@ class PageLayout extends Component {
     renderBgLayers = () => {
         return this.props.layers.map((layer, i) => 
             {
-                const { style, speed, children, factor } = layer
+                const { style, speed, children, factor, offset } = layer
                 return (
                     <ParallaxLayer 
                         key={i} 
                         style={style} 
                         speed={speed}
-                        offset={this.props.offset}
+                        offset={offset? offset: this.props.offset}
                         factor={factor}
                         className="pageLayer">
 

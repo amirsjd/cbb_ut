@@ -26,10 +26,10 @@ class Home extends PureComponent {
 
         const scrollTop = this.parallax.current
         const pageHeight = this.parallax.space
-        const pageTop = scrollTop % pageHeight
+        //const pageTop = scrollTop % pageHeight
 
         const pageIndex = Math.ceil( scrollTop / pageHeight )
-        const percentage = pageTop / pageHeight
+        //const percentage = pageTop / pageHeight
 
         if(pageIndex !== this.status.pageIndex) {
             const isScrolled = scrollTop? true : false
@@ -40,7 +40,7 @@ class Home extends PureComponent {
             this.status = { ...this.status, isScrolled }
         }
 
-        this.status = { ...this.status, percentage }
+        //this.status = { ...this.status, percentage }
 
         this.props.context.updateStatus({
             ...this.props.context.state.status, 
@@ -48,21 +48,13 @@ class Home extends PureComponent {
         })
     }
 
-    setPlxProps = (action = null, args = null) => {
-        
-        switch(action) {
-            case 'SCROLL': 
-                this.parallax.scrollTo(args)
-                break
-            default: return this.parallax
-        }
-    }
+    scrollTo = (page) => this.parallax.scrollTo(page)
 
     componentWillMount() {
         
         this.props.context.updateStatus({
             ...this.config, ...this.status,
-            setPlxProps: this.setPlxProps,
+            scrollTo: this.scrollTo,
         })
     }
 
@@ -92,7 +84,7 @@ class Home extends PureComponent {
                         <Pages 
                             {...this.config} 
                             {...this.status}
-                            setPlxProps={this.setPlxProps} />
+                            scrollTo={this.scrollTo} />
 
                 </Parallax>
 

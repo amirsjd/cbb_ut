@@ -1,21 +1,39 @@
 .Home-descPage {
     
     &-content {
+        max-width: 14em;
+
         position: absolute;
         top: 50%;
-        left: 50%;
+        left: 30%;
         transform: translate(-50%, -50%);
         
         display: block;
+        padding: {
+            left: 0.5rem;
+        }
+
+        span {
+            margin: {
+                top: 1rem;
+                bottom: 1rem;
+            }
+            font: {
+                size: 0.85rem;
+                weight: lighter;
+                family: 'Bitter', sans-serif;
+            }
+            color: rgba(255, 255, 255, 0.69);
+        }
 
         font: {
-            family: 'Montserrat', sans-serif;
-            size: 2.25rem;
-            weight: lighter;
+            family: 'Bitter', sans-serif;
+            size: 1.5rem;
+            weight: bold;
         }
 
         text: { 
-            align: center;
+            align: left;
             shadow: 0 0 18px rgba(0, 0, 0, 0.75);
         }
 
@@ -25,14 +43,11 @@
     }
 
     &-learnMoreButton {
-        display: inline;
-        color: white;
+        
     }
 
     &-aboutButton {
-        display: inline;
-        background-color: white;
-        color: rgb(22, 22, 22);
+        
     }
 
     &-scrollDownButton {
@@ -68,6 +83,11 @@
         &-content {
             font: {
                 size: 1.5rem;
+            }
+            span {
+                font: {
+                    size: 1rem;
+                }
             }
         }
 

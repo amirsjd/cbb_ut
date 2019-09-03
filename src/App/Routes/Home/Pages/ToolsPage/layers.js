@@ -5,7 +5,8 @@ export default [
             height: '100vh',
             width: '100vw',
             backgroundImage: 'linear-gradient(#6EC6CA,#08979D)',
-            opacity: 1
+            opacity: 1,
+            zIndex: 0
         }
     }
 ]

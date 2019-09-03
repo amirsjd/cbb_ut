@@ -5,13 +5,9 @@ import axios from 'axios'
 const URL = 'http://cbb-ut.gigfa.com/wp-json'
 const config = {
     headers: {
-        Cookie: "__test= 82bedf416aff4e3e4cb1734660a46f2a"
+        Cookie: "__test= eb5a0991d4298889db75c80c0f732d34"
     },
     withCredentials: true
-}
-const catIds = {
-    news: 2,
-    blog: 3
 }
 
 const pageIds = {
@@ -22,13 +18,12 @@ const pageIds = {
 
 /* Functions */
 
-const catsSwitch = (cat) => {
-    switch (cat) {
-        case 'NEWS': return catIds.news
-        case 'BLOG': return catIds.blog
-        default: return null
-    }
-}
+const getCatsIds = (cat) => 
+    axios.get(
+        `${URL}/wp/v2/categories?slug="${cat}"`, 
+        config
+    )
+    .then(res => res.data[0].id)
 
 const pagesSwitch = (page) => {
     switch (page) {
@@ -38,6 +33,8 @@ const pagesSwitch = (page) => {
         default: return null
     }
 }
+
+
 
 /* getters */
 
@@ -52,29 +49,21 @@ export function getInfo() {
     }
 }
 
-export function getPostsByCats(cats) {
+export function getPostsByCat(cat) {
 
-    let catIdsList = cats.map(cat => catsSwitch(cat))
+    const url = `${URL}/wp/v2/posts?categories=`
 
-    let catsList = catIdsList.map(id => id + ',' )
-
-    const req = axios.get(
-            `${URL}/wp/v2/posts?categories=${catsList}`, 
-            config
-        ).then(res => res.data)
+    let req = getCatsIds(cat).then((id) => 
+                    axios.get(
+                        url + id, 
+                        config
+                    ).then(res => res.data)
+                )
 
     return {
-        type: 'POSTS', 
+        type: `${cat}`, 
         payload: req
     }
-}
-
-export function getNews() {
-
-}
-
-export function getBlog() {
-
 }
 
 export function getPage(page) {

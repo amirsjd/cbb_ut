@@ -14,40 +14,56 @@ class Page extends PureComponent {
         speed: 0.2
     }
 
-    scrollDown = (setPlxProps) => {
-        setPlxProps('SCROLL', this.config.offset + 1)
-    }
+    scrollDown = (scrollTo) => scrollTo(this.config.offset + 1)
 
-    componentWillMount() {
-
+    componentWillMount() { 
         this.props.getInfo()
     }
 
+    parseToText = (text) => 
+        (new DOMParser()).parseFromString(
+            '<!doctype html><body>' + text,
+            'text/html'
+        ).body.textContent
+
     render() {
+        
+        const { scrollTo } = this.props
+        const info = this.props.data.info
 
-        console.log(this.props.data)
-
-        const { setPlxProps } = this.props
         return (
             <PageLayout {...this.config} layers={layers} >
 
                 <div className="Home-descPage-content" >
                     <div>
-                        <span>{this.props.data.info && this.props.data.info.description}</span>
+                        {
+                            info && 
+                            this.parseToText(info.name)
+                        }
+                        <span>
+                            {
+                                info && 
+                                this.parseToText(info.description)
+                            }
+                        </span>
                     </div>
 
-                    <div className="roundButton Home-descPage-learnMoreButton" >
+                    <div className="
+                        roundButton-outline 
+                        Home-descPage-learnMoreButton" >
                         Learn More
                     </div>
 
-                    <div className="roundButton Home-descPage-aboutButton" >
+                    <div className="
+                        roundButton-filled 
+                        Home-descPage-aboutButton" >
                         About Us 
                     </div>
                 </div>
 
                 <div 
                     className="Home-descPage-scrollDownButton" 
-                    onClick={() => this.scrollDown(setPlxProps)}>
+                    onClick={() => this.scrollDown(scrollTo)}>
 
                     <span>Scroll Down</span>
                     <span><i className="fas fa-angle-down" /></span>

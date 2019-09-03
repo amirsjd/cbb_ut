@@ -26,7 +26,7 @@ class Layout extends Component {
                             const { 
                                 hasNavBar, hasScrollBar, hasTitleBar,
                                 pages, pageIndex, pageTitle, isScrolled,
-                                setPlxProps, 
+                                scrollTo, 
                             } = context.state.status
 
                             return (
@@ -38,7 +38,7 @@ class Layout extends Component {
                                     <ScrollBar 
                                         pages={pages} 
                                         pageIndex={pageIndex}
-                                        setPlxProps={setPlxProps} />}
+                                        scrollTo={scrollTo} />}
 
                                     {hasTitleBar && 
                                     <TitleBar pageTitle={pageTitle} />}

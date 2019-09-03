@@ -6,7 +6,7 @@ import layers from './layers'
 class Page extends PureComponent {
 
     state = {
-        offset: 3,
+        offset: this.props.offset,
         speed: 0.2
     }
 

@@ -1,5 +1,7 @@
 // buttons
-.roundButton {
+
+@mixin roundButton {
+    display: inline;
     cursor: pointer;
     font: {
         weight: lighter;
@@ -11,9 +13,9 @@
     padding: 9px 18px;
     border: { 
         radius: 25px;
-        width: 1.5px;
-        color: white;
-        style: dashed;
+        width: 0.1px;
+        color: rgba(255, 255, 255, 0.55);
+        style: solid;
     }
 
     box: {
@@ -21,9 +23,22 @@
     }
 }
 
+.roundButton {
+    &-filled {
+        @include roundButton;
+        background: rgb(255, 255, 255);
+        color: rgb(22,22,22);
+    }
+    &-outline {
+        @include roundButton;
+        background: rgba(0,0,0,0);
+        color: rgb(255,255,255);
+    }
+}
+
 .scrollableContainer {
     scrollbar-width: thin;
-    scrollbar-color: rgba(105, 105, 105, 0.25) rgba(0,0,0,0);
+    scrollbar-color: rgba(105, 105, 105, 0) rgba(0,0,0,0);
 
     &:hover {
         scrollbar-color: rgba(80, 80, 80, 0.25) rgba(0,0,0,0);
