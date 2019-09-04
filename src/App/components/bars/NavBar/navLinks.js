@@ -15,9 +15,9 @@ class NavLinks extends Component {
 
     render() {
         return ( 
-            <ul className="NavLinks">
+            <div className="NavLinks">
                 {this.renderLinks()}
-            </ul>
+            </div>
         )
     }
 }

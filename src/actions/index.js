@@ -5,7 +5,7 @@ import axios from 'axios'
 const URL = 'http://cbb-ut.gigfa.com/wp-json'
 const config = {
     headers: {
-        Cookie: "__test= eb5a0991d4298889db75c80c0f732d34"
+        
     },
     withCredentials: true
 }

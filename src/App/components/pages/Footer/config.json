@@ -1,20 +1,102 @@
 {
-    "content": [
+    "links": [
         {
-            "title": "",
-            "link": "",
+            "title": "Cookies",
+            "to": ""
+        },
+        {
+            "title": "Privacy policy",
+            "to": ""
+        },
+        {
+            "title": "Login",
+            "to": "/wp-admin"
+        }
+    ],
+    "map": {
+        "lat": 35.707,
+        "lng": 51.395
+    },
+    "contact": {
+        "address": "Tehran, Enghelab Sq., Enghelab St., Qods St., No. 37",
+        "email": "prel@cbb.ut.ac.ir",
+        "phone": "+98 216 640 5047",
+        "postalCode": "1417414418"
+    },
+    "lists": [
+        {
+            "title": "CBB",
+            "to": "/home",
             "list": [
                 {
-                    "text": "",
-                    "link": ""
+                    "title": "Site map",
+                    "to": "/site"
                 },
                 {
-
+                    "title": "Archive",
+                    "to": "/archive"
+                },
+                {
+                    "title": "Feed",
+                    "to": "/rss"
+                },
+                {
+                    "title": "News",
+                    "to": "/news"
+                },
+                {
+                    "title": "Blog",
+                    "to": "/blog"
                 }
             ]
         },
         {
-            
+            "title": "People",
+            "to": "/home",
+            "list": [
+                {
+                    "title": "Faculty",
+                    "to": ""
+                },
+                {
+                    "title": "Professors",
+                    "to": ""
+                },
+                {
+                    "title": "Staff",
+                    "to": ""
+                },
+                {
+                    "title": "Graduate Students",
+                    "to": ""
+                }
+            ]
+        },    {
+            "title": "Tools",
+            "to": "/home",
+            "list": [
+                {
+                    "title": "",
+                    "to": ""
+                },
+                {
+                    "title": "",
+                    "to": ""
+                }
+            ]
+        },    {
+            "title": "About us",
+            "to": "/home",
+            "list": [
+                {
+                    "title": "About us",
+                    "to": "/about"
+                },
+                {
+                    "title": "Contact",
+                    "to": "/contact"
+                }
+            ]
         }
     ]
 }

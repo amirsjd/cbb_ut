@@ -11,7 +11,7 @@ class Page extends PureComponent {
 
     config = {
         offset: this.props.offset,
-        speed: 0.2
+        speed: 0
     }
 
     scrollDown = (scrollTo) => scrollTo(this.config.offset + 1)
@@ -35,17 +35,13 @@ class Page extends PureComponent {
             <PageLayout {...this.config} layers={layers} >
 
                 <div className="Home-descPage-content" >
-                    <div>
-                        {
-                            info && 
-                            this.parseToText(info.name)
-                        }
-                        <span>
-                            {
-                                info && 
-                                this.parseToText(info.description)
-                            }
-                        </span>
+                    <div className="text">
+                        <div className="title">
+                            {info && this.parseToText(info.name)}
+                        </div>
+                        <div className="desc">
+                            {info && this.parseToText(info.description)}
+                        </div>
                     </div>
 
                     <div className="

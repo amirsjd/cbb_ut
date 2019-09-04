@@ -1,21 +1,11 @@
 import React from 'react'
 
 export default [
-    
     {
         speed: 0,
-        style: {
-            position: 'absolute',
-            height: '100vh',
-            width: '100vw',
-            backgroundImage: 'linear-gradient(#CCABDB,#8474A1)'
-        }
-    },
-    {
-        speed: 0.1,
         children:
             <div style={{
-                width: '120%', height: '120%',
+                width: '140%', height: '140%',
                 backgroundImage: 'url("/assets/Home/bg-img.jpg")',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
@@ -27,7 +17,7 @@ export default [
             }} />
     },    
     {
-        speed: -0.2,
+        speed: -0.7,
         children: 
             <img alt="" src="/assets/Home/cell.png"
                 style={{

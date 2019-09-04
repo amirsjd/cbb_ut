@@ -20,10 +20,10 @@ $viewPoint: 64px;
     }
 
     &-logo {
-        position: relative;
+        position: absolute;
         width: $viewPoint;
         height: $viewPoint;
-        left: 12px;
+        left: 8px;
     }
 
     &-links {
@@ -40,46 +40,51 @@ $viewPoint: 64px;
         height: $viewPoint;
         overflow: visible;
         position: absolute;
-        right: 12px;
+        right: 8px;
+    }
+
+    .NavLinks {
+        position: absolute;
+        width: min-content;
+        height: min-content;
+    
+        padding: 0;
+        margin: 0;
+        
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        display: flex;
+    
+        &-item {
+            display: inline;
+        }
+    }
+
+    .NavLogo {
+
+        width: min-content;
+        height: min-content;
+    
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .NavLink {
+        display: inline-block;
+        margin: 0px 12px;
+        opacity: 0.85;
+    
+        &-selected {
+            opacity: 1;
+            color: nth($accentColors, 1);
+        }
     }
 }
 
-.NavLogo {
 
-    width: min-content;
-    height: min-content;
-
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.NavLinks {
-    position: absolute;
-    width: min-content;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    display: inline-flex;
-
-    padding: 0;
-
-    &-item {
-        display: inline;
-    }
-}
-
-.NavLink {
-    display: inline-block;
-    margin: 0px 12px;
-    opacity: 0.85;
-
-    &-selected {
-        opacity: 1;
-        color: nth($accentColors, 1);
-    }
-}
 
 @media only screen and (max-width: 600px) {
     .NavBar {

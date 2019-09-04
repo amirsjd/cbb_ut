@@ -27,7 +27,7 @@ class Routes extends Component {
         const setComponent = this.setComponent
 
         return (
-            <div>
+            <div className="Routes-container">
                 <Layout 
                     user={this.props.user} >
                         

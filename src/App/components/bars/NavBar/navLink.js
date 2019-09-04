@@ -7,7 +7,7 @@ class NavLinkItem extends Component {
     render() {
         const { title, linkTo } = this.props.link
         return (
-            <li className="NavLinks-item">
+            <div className="NavLinks-item">
                 <NavLink 
                     to={`/${linkTo}`}
                     className="NavLink" 
@@ -15,7 +15,7 @@ class NavLinkItem extends Component {
 
                     {title}
                 </NavLink>
-            </li>
+            </div>
         )
     }
 }

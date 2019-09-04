@@ -1,7 +1,7 @@
 .Home-descPage {
     
     &-content {
-        max-width: 14em;
+        width: 20em;
 
         position: absolute;
         top: 50%;
@@ -13,33 +13,43 @@
             left: 0.5rem;
         }
 
-        span {
-            margin: {
-                top: 1rem;
-                bottom: 1rem;
+        .text {
+
+            padding: {
+                left: 0.35em;
             }
-            font: {
-                size: 0.85rem;
-                weight: lighter;
-                family: 'Bitter', sans-serif;
+
+            .title {
+                font: {
+                    family: 'Bitter', sans-serif;
+                    size: 1.5rem;
+                    weight: bold;
+                }
+
+                text: { 
+                    align: left;
+                    shadow: 0 0 18px rgba(0, 0, 0, 0.75);
+                }
             }
-            color: rgba(255, 255, 255, 0.69);
+
+            .desc {
+                display: block;
+                margin: {
+                    top: 1rem;
+                    bottom: 2.5rem;
+                }
+                font: {
+                    size: 0.85rem;
+                    weight: lighter;
+                    family: 'Bitter', sans-serif;
+                }
+                color: rgba(255, 255, 255, 0.69);
+            }
         }
 
-        font: {
-            family: 'Bitter', sans-serif;
-            size: 1.5rem;
-            weight: bold;
-        }
 
-        text: { 
-            align: left;
-            shadow: 0 0 18px rgba(0, 0, 0, 0.75);
-        }
 
-        span {
-            display: block;
-        }
+
     }
 
     &-learnMoreButton {
