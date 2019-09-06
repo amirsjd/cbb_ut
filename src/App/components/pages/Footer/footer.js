@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 
-import data from './config.json'
+import { footerLinks as data, CURRENT_YEAR } from '../../../../static/config'
 
 import PageLayout from '../PageLayout'
 import './footer.scss'
@@ -54,7 +54,7 @@ class FooterPage extends Component {
                     </div>
                     <div className="footerPage-branding">
                         <div className="copyright">
-                            Copyright © 2019 University of Tehran Bioinformatics Department
+                            Copyright © {CURRENT_YEAR} University of Tehran Bioinformatics Department
                         </div> 
                         <div className="links">
                             {this.renderLinks()}

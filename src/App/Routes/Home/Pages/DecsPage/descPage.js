@@ -49,12 +49,6 @@ class Page extends PureComponent {
                         Home-descPage-learnMoreButton" >
                         Learn More
                     </div>
-
-                    <div className="
-                        roundButton-filled 
-                        Home-descPage-aboutButton" >
-                        About Us 
-                    </div>
                 </div>
 
                 <div 
@@ -62,7 +56,7 @@ class Page extends PureComponent {
                     onClick={() => this.scrollDown(scrollTo)}>
 
                     <span>Scroll Down</span>
-                    <span><i className="fas fa-angle-down" /></span>
+                    <i className="fas fa-angle-down" />
                 </div>
             </PageLayout>
         )

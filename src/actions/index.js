@@ -5,7 +5,7 @@ import axios from 'axios'
 const URL = 'http://cbb-ut.gigfa.com/wp-json'
 const config = {
     headers: {
-        
+        //'Access-Control-Allow-Origin': '*'
     },
     withCredentials: true
 }

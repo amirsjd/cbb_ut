@@ -10,7 +10,7 @@ class NavLinks extends Component {
             return link.show && (
                 <NavLink link={link} key={i} />
             )
-        })
+        }) 
     }
 
     render() {

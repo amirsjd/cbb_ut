@@ -1,37 +1,94 @@
 [
     {
         "title": "Home",
-        "linkTo": "home",
-        "show": true
+        "to": "/home",
+        "show": true,
+        "hasMenu": false
     },
     {
         "title": "People",
-        "linkTo": "people",
-        "show": true
+        "to": "/people",
+        "show": true,
+        "hasMenu": true,
+        "getSub": "PEOPLE",
+        "menu": [
+            {
+                "title": "Faculty",
+                "to": "/people/faculty"
+            },
+            {
+                "title": "Professors",
+                "to": "/people/professors"
+            },
+            {
+                "title": "Staff",
+                "to": "/people/staff"
+            },
+            {
+                "title": "Graduate Students",
+                "to": "/people/graduates"
+            }
+        ]
     },
     {
         "title": "Tools",
-        "linkTo": "tools",
-        "show": true
+        "to": "/tools",
+        "show": true,
+        "hasMenu": true,
+        "getSub": "TOOLS",
+        "menu": [
+            {
+                "title": "ParalogyDB",
+                "to": "/tools/paralogydb"
+            },
+            {
+                "title": "PPhage",
+                "to": "/tools/pphage"
+            },
+            {
+                "title": "TaXyl",
+                "to": "/tools/taxyl"
+            },
+            {
+                "title": "TaXyl",
+                "to": "/tools/taxyl"
+            },
+            {
+                "title": "TaXyl",
+                "to": "/tools/taxyl"
+            },
+            {
+                "title": "TaXyl",
+                "to": "/tools/taxyl"
+            },
+            {
+                "title": "TaXyl",
+                "to": "/tools/taxyl"
+            }
+        ]
     },
     {
         "title": "News",
-        "linkTo": "news",
-        "show": true
+        "to": "/news",
+        "show": true,
+        "hasMenu": false
     },
     {
         "title": "Blog",
-        "linkTo": "blog",
-        "show": true
+        "to": "/blog",
+        "show": true,
+        "hasMenu": false
     },
     {
         "title": "Contact",
-        "linkTo": "contact",
-        "show": false
+        "to": "/contact",
+        "show": false,
+        "hasMenu": false
     },
     {
         "title": "About",
-        "linkTo": "about",
-        "show": false
+        "to": "/about",
+        "show": false,
+        "hasMenu": false
     }
 ]

@@ -58,6 +58,64 @@ $viewPoint: 64px;
     
         &-item {
             display: inline;
+
+            .NavLink {
+                display: inline-block;
+                padding: 0px 12px;
+                opacity: 0.85;
+            
+                &-selected {
+                    opacity: 1;
+                    color: nth($accentColors, 2);
+                }
+            }
+        }
+
+        .dropdown {
+            display: inline-block;
+
+            &-menu {
+                display: none;
+                position: absolute;
+
+                &-bg {
+                    position: absolute;
+                    width: 100%; height: 100%;
+                    z-index: -1;
+
+                    .arrow-up {
+                        margin-left: 20px;
+                        margin-top: 10px;
+                        width: 0;
+                        height: 0;
+                        border-left: 10px solid transparent;
+                        border-right: 10px solid transparent;
+                        border-bottom: 10px solid rgba(black,0.15);
+                    }
+                    .round-box {
+                        width: 100%;
+                        height: calc(100% - 20px);
+                        background: rgba(black,0.15);
+                        border-radius: 5px;
+                    }
+                    
+                }
+
+                &-items {
+                    padding: 12px;
+                    padding-top: 26px;
+                }
+
+                &-item {
+                    display: block;
+                }
+            }
+
+            &:hover {
+                .dropdown-menu {
+                    display: block;
+                }
+            }
         }
     }
 
@@ -70,17 +128,6 @@ $viewPoint: 64px;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-    }
-    
-    .NavLink {
-        display: inline-block;
-        margin: 0px 12px;
-        opacity: 0.85;
-    
-        &-selected {
-            opacity: 1;
-            color: nth($accentColors, 1);
-        }
     }
 }
 

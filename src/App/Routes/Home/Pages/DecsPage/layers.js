@@ -22,13 +22,14 @@ export default [
             <img alt="" src="/assets/Home/cell.png"
                 style={{
                     position: 'absolute',
-                    left: '70%',
-                    top: '50%',
+                    left: 'calc(70% - 4em)',
+                    top: 'calc(50% - 4em)',
                     transform: 'translate(-50%,-50%)',
                     height: '8em',
                     zIndex: 20,
                     filter: 'brightness(90%)',
                     opacity: 0.8,
+                    animation: 'anti-spin 12s linear infinite',
                 }} />
     },
     {
@@ -38,11 +39,12 @@ export default [
                 style={{
                     width: '20em',
                     position: 'absolute',
-                    top: '50%',
-                    left: '70%',
-                    transform: 'translate(-50%,-50%)',
+                    top: 'calc(50% - 10em)',
+                    left: 'calc(70% - 10em)',
+                    //transform: 'translate(-50%,-50%)',
                     opacity: 0.85,
-                    filter: 'brightness(75%)'
+                    filter: 'brightness(75%)',
+                    animation: 'spin 120s linear infinite',
                 }} />
     },
 

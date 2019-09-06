@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-import './Layout.scss'
 import LayoutProvider, { LayoutContext } from './LayoutProvider'
 
 import NavBar from './bars/NavBar/navBar'
@@ -11,43 +10,38 @@ class Layout extends Component {
 
 
     render() {
-
         return (
-            <div className="Layout">
+            <LayoutProvider>
 
-                <LayoutProvider>
-                    <div className="Layout-content">
-                        {this.props.children} 
-                    </div>
+                {this.props.children} 
 
-                    <LayoutContext.Consumer>
-                        {(context) => {
+                <LayoutContext.Consumer>
+                    {(context) => {
 
-                            const { 
-                                hasNavBar, hasScrollBar, hasTitleBar,
-                                pages, pageIndex, pageTitle, isScrolled,
-                                scrollTo, 
-                            } = context.state.status
+                        const { 
+                            hasNavBar, hasScrollBar, hasTitleBar,
+                            pages, pageIndex, pageTitle, isScrolled,
+                            scrollTo, 
+                        } = context.state.status
 
-                            return (
-                                <>
-                                    {hasNavBar &&
-                                    <NavBar isScrolled={isScrolled} />}
+                        return (
+                            <>
+                                {hasNavBar &&
+                                <NavBar isScrolled={isScrolled} />}
 
-                                    {hasScrollBar && 
-                                    <ScrollBar 
-                                        pages={pages} 
-                                        pageIndex={pageIndex}
-                                        scrollTo={scrollTo} />}
+                                {hasScrollBar && 
+                                <ScrollBar 
+                                    pages={pages} 
+                                    pageIndex={pageIndex}
+                                    scrollTo={scrollTo} />}
 
-                                    {hasTitleBar && 
-                                    <TitleBar pageTitle={pageTitle} />}
-                                </>
-                            )
-                        }}
-                    </LayoutContext.Consumer>
-                </LayoutProvider>
-            </div>
+                                {hasTitleBar && 
+                                <TitleBar pageTitle={pageTitle} />}
+                            </>
+                        )
+                    }}
+                </LayoutContext.Consumer>
+            </LayoutProvider>
         )
     }
 }

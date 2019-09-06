@@ -7,6 +7,10 @@ const PageIndicator = (props) => {
     } = props
 
     const c = pageIndex + 1
+    var num = c.toLocaleString('en-US', {
+        minimumIntegerDigits: 2, 
+        useGrouping:false
+    })
 
     return (
         <>
@@ -18,7 +22,7 @@ const PageIndicator = (props) => {
                 <i className="fas fa-sort-up" />
             </div>
 
-            <span className="ScrollBar-number">0{c}</span>
+            <span className="ScrollBar-number">{num}</span>
 
             <div 
                 className="ScrollBar-arrow"

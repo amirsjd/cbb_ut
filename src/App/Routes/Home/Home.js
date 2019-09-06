@@ -27,7 +27,6 @@ class Home extends PureComponent {
         const scrollTop = this.parallax.current
         const pageHeight = this.parallax.space
         //const pageTop = scrollTop % pageHeight
-        console.log(pageHeight, ",", window.innerHeight)
 
         const pageIndex = Math.ceil( scrollTop / pageHeight )
         //const percentage = pageTop / pageHeight

@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import { Transition, animated } from 'react-spring/renderprops'
 
 import './nav-bar.scss'
-import { headerLinks } from '../../../../static/config/config'
+import { headerLinks } from '../../../../static/config'
 
 import NavLinks from './navLinks'
 import NavLogo from './navLogo'

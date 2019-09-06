@@ -17,43 +17,43 @@ import NotFound from './404/NotFound'
 
 class Routes extends Component { 
 
-    setComponent = (Comp) => (props) => (
+    withContext = (Comp) => (props) => (
         <LayoutContext.Consumer>
             {context => <Comp {...props} context={context} />}
         </LayoutContext.Consumer>
     )
 
     render() {
-        const setComponent = this.setComponent
+        const withContext = this.withContext
 
         return (
-            <div className="Routes-container">
-                <Layout 
-                    user={this.props.user} >
-                        
-                    <Switch>
-                        <Redirect from="/home" to="/" />
+            <Layout>
+                <Switch>
+                    <Redirect from="/home" to="/" />
 
-                        <Route path="/blog/:postid" component={Blog} />
-                        <Route path="/blog/:author" component={Blog} />
-                        <Route path="/blog" exact component={Blog} />
+                    <Route path="/blog/posts/:postid" component={Blog} />
+                    <Route path="/blog/authors/:author" component={Blog} />
+                    <Route path="/blog" exact component={withContext(Blog)} />
+                    
+                    <Route path="/news/:category" component={News} />
+                    <Route path="/news/:id" component={News} />
+                    <Route path="/news" exact component={News} />
+                    
+                    <Route path="/tools/:tool" component={Tools} />
+                    <Route path="/tools" exact component={Tools} />
 
-                        <Route path="/people/:person" component={People} />
-                        <Route path="/people" exact component={People} />
+                    <Route path="/people/:title" component={People} />
+                    <Route path="/people" exact component={People} />
 
-                        <Route path="/news/:id" component={News} />
-                        <Route path="/news" exact component={News} />
-
-                        <Route path="/contact" component={Contact} />
-                        <Route path="/about" component={About} />
-                        <Route path="/tools" component={Tools} />
-                        <Route path="/home" component={Home} />
-                        
-                        <Route path="/" exact component={setComponent(Home)} />
-                        <Route component={NotFound} />
-                    </Switch>
-                </Layout>
-            </div>
+                    <Route path="/contact" component={Contact} />
+                    <Route path="/about" component={withContext(About)} />
+                    
+                    <Route path="/home" component={Home} />
+                    
+                    <Route path="/" exact component={withContext(Home)} />
+                    <Route component={NotFound} />
+                </Switch>
+            </Layout>
         )
     }
 }

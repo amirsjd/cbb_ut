@@ -1,47 +1,110 @@
 {
-    "titles": [
+    "links": [
+        {
+            "title": "Cookies",
+            "to": "/cookies"
+        },
+        {
+            "title": "Privacy policy",
+            "to": "/privacy"
+        },
+        {
+            "title": "Login",
+            "to": "/wp-admin"
+        }
+    ],
+    "map": {
+        "lat": 35.707,
+        "lng": 51.395
+    },
+    "contact": {
+        "address": "Tehran, Enghelab Sq., Enghelab St., Qods St., No. 37",
+        "email": "prel@cbb.ut.ac.ir",
+        "phone": "+98 216 640 5047",
+        "postalCode": "1417414418"
+    },
+    "lists": [
         {
             "title": "CBB",
-            "links": [
+            "to": "/home",
+            "list": [
                 {
-                    "text": "",
-                    "link": ""
+                    "title": "Site map",
+                    "to": "/site"
+                },
+                {
+                    "title": "Archive",
+                    "to": "/archive"
+                },
+                {
+                    "title": "Feed",
+                    "to": "/rss"
+                },
+                {
+                    "title": "News",
+                    "to": "/news"
+                },
+                {
+                    "title": "Blog",
+                    "to": "/blog"
                 }
             ]
         },
         {
-            "title": "News",
-            "links": [
+            "title": "People",
+            "to": "/home",
+            "list": [
                 {
-                    "text": "",
-                    "link": ""
+                    "title": "Faculty",
+                    "to": "/people/faculty"
+                },
+                {
+                    "title": "Professors",
+                    "to": "/people/professors"
+                },
+                {
+                    "title": "Staff",
+                    "to": "/people/staff"
+                },
+                {
+                    "title": "Graduate Students",
+                    "to": "/people/graduates"
                 }
             ]
-        },
+        },    
         {
-            "title": "Blog",
-            "links": [
+            "title": "Tools",
+            "to": "/tools",
+            "list": [
                 {
-                    "text": "",
-                    "link": ""
+                    "title": "ParalogyDB",
+                    "to": "/tools/paralogydb"
+                },
+                {
+                    "title": "PPhage",
+                    "to": "/tools/pphage"
+                },
+                {
+                    "title": "TaXyl",
+                    "to": "/tools/taxyl"
+                },
+                {
+                    "title": "more...",
+                    "to": "/tools"
                 }
             ]
-        },
+        },    
         {
-            "title": "News",
-            "links": [
+            "title": "About us",
+            "to": "/home",
+            "list": [
                 {
-                    "text": "",
-                    "link": ""
-                }
-            ]
-        },
-        {
-            "title": "News",
-            "links": [
+                    "title": "About us",
+                    "to": "/about"
+                },
                 {
-                    "text": "",
-                    "link": ""
+                    "title": "Contact",
+                    "to": "/contact"
                 }
             ]
         }

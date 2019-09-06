@@ -1,12 +1,16 @@
 // Colors
-$accentColors: (rgb(204, 171, 219), 
-                rgb(132, 116, 161), 
-                rgb(110, 198, 202), 
-                rgb(8, 151, 157), 
-                rgb(5, 91, 92));
-$themeColor: rgb(191, 0, 255);
-$bgColor: rgb(48, 48, 48);
-$textColor: rgb(247, 240, 233);
-$focusColor: rgb(255, 255, 255);
+
+$accentColors: (#9A79FE, 
+                #4ED7FB, 
+                #3E4353, 
+                #B1B9C4, 
+                #FFFFFF);
+
+$themeColor: nth($accentColors,1);
+$secondaryColor: nth($accentColors,2);
+$bgColor: nth($accentColors,3);
+$textColor: nth($accentColors,5);
+$leftColor: nth($accentColors,4);
+$focusColor: nth($accentColors,5);
 
 
