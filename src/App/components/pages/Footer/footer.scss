@@ -23,7 +23,7 @@
             text-transform: uppercase;
             font-weight: bold;
             display: inline-block;
-            border-bottom: 0.5px solid rgba(255, 255, 255, 0.25);
+            border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
             width: 100%;
             padding-bottom: 5px;
         }
@@ -98,7 +98,7 @@
         min-width: max-content;
         justify-content: center;
         align-items: center;
-        border-top: 0.5px solid rgba(255, 255, 255, 0.25);
+        border-top: 0.5px solid rgba(255, 255, 255, 0.1);
         padding: 1em 1em 1em 1em;
 
         .copyright {
