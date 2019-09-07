@@ -29,6 +29,7 @@ class Routes extends Component {
         return (
             <Layout>
                 <Switch>
+                    <Redirect from="/login" to="/wp-login" />
                     <Redirect from="/home" to="/" />
 
                     <Route path="/blog/posts/:postid" component={Blog} />

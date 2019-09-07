@@ -1,8 +1,8 @@
 {
     "links": [
         {
-            "title": "Cookies",
-            "to": "/cookies"
+            "title": "Sitemap",
+            "to": "/sitemap"
         },
         {
             "title": "Privacy policy",
@@ -10,7 +10,7 @@
         },
         {
             "title": "Login",
-            "to": "/wp-admin"
+            "to": "/login"
         }
     ],
     "map": {
@@ -20,7 +20,7 @@
     "contact": {
         "address": "Tehran, Enghelab Sq., Enghelab St., Qods St., No. 37",
         "email": "prel@cbb.ut.ac.ir",
-        "phone": "+98 216 640 5047",
+        "phone": "+98 (0)216 640 5047",
         "postalCode": "1417414418"
     },
     "lists": [
@@ -35,10 +35,6 @@
                 {
                     "title": "Archive",
                     "to": "/archive"
-                },
-                {
-                    "title": "Feed",
-                    "to": "/rss"
                 },
                 {
                     "title": "News",
@@ -75,6 +71,7 @@
         {
             "title": "Tools",
             "to": "/tools",
+            "getSub": "TOOLS",
             "list": [
                 {
                     "title": "ParalogyDB",

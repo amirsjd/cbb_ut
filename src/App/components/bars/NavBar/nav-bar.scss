@@ -85,18 +85,20 @@ $viewPoint: 64px;
 
                     .arrow-up {
                         margin-left: 20px;
-                        margin-top: 10px;
+                        margin-top: 11px;
                         width: 0;
                         height: 0;
                         border-left: 10px solid transparent;
                         border-right: 10px solid transparent;
-                        border-bottom: 10px solid rgba(black,0.15);
+                        border-bottom: 10px solid rgba(black,0.85);
                     }
                     .round-box {
                         width: 100%;
                         height: calc(100% - 20px);
-                        background: rgba(black,0.15);
+                        background: rgba(black,0.85);
                         border-radius: 5px;
+                        -webkit-backdrop-filter: blur(10px);
+                        backdrop-filter: blur(10px);
                     }
                     
                 }

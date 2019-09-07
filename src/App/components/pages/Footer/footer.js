@@ -41,8 +41,8 @@ class FooterPage extends Component {
                         {this.renderGroups()}
                     </div>
                     <div className="footerPage-location">
-                        <div className="footerPage-map">
-                            <img alt="map" src="/assets/Home/maps.png" />
+                        <div className="footerPage-map"
+                            style={{ backgroundImage: 'url("/assets/Home/maps.png")' }}>
                         </div>
                         <div className="footerPage-contact">
                             <header>Contact Us</header>

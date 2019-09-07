@@ -2,11 +2,11 @@ import React from 'react'
 
 export default [
     {
-        speed: 0,
+        speed: -0.15,
         children:
             <div style={{
                 width: '140%', height: '140%',
-                backgroundImage: 'url("/assets/Home/bg-img.jpg")',
+                backgroundImage: 'url("/assets/Home/bg-0.jpg")',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 filter: 'brightness(75%) blur(10px)',
@@ -28,7 +28,7 @@ export default [
                     zIndex: 20,
                     filter: 'brightness(90%)',
                     opacity: 0.8,
-                    animation: 'anti-spin 15s linear infinite',
+                    animation: 'anti-spin 30s linear infinite',
                 }} />
     },
     {

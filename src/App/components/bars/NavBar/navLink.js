@@ -10,7 +10,7 @@ const NavLinkItem = (props) => {
     const renderMenu = () => 
         menu.map((item,i) => 
             <Link to={item.to} className="dropdown-menu-item" key={i}>
-                {item.title}
+                • {item.title}
             </Link>
         )
 

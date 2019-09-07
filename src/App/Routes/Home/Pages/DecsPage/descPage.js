@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { Link } from 'react-router-dom'
+
 import { getInfo } from '../../../../../actions'
 
 import './desc-page.scss'
@@ -44,11 +46,13 @@ class Page extends PureComponent {
                         </div>
                     </div>
 
-                    <div className="
-                        roundButton-outline 
-                        Home-descPage-learnMoreButton" >
-                        Learn More
-                    </div>
+                    <Link to="/about">
+                        <div className="
+                            roundButton-outline 
+                            Home-descPage-learnMoreButton" >
+                            Learn More
+                        </div>
+                    </Link>
                 </div>
 
                 <div 

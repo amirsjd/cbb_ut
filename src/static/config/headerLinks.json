@@ -10,7 +10,6 @@
         "to": "/people",
         "show": true,
         "hasMenu": true,
-        "getSub": "PEOPLE",
         "menu": [
             {
                 "title": "Faculty",
@@ -50,20 +49,16 @@
                 "to": "/tools/taxyl"
             },
             {
-                "title": "TaXyl",
-                "to": "/tools/taxyl"
+                "title": "Peptide Feature Extraction",
+                "to": "/tools/pfecalc"
             },
             {
-                "title": "TaXyl",
-                "to": "/tools/taxyl"
+                "title": "Anti-Microbial Peptide Prediction",
+                "to": "/tools/ampcls"
             },
             {
-                "title": "TaXyl",
-                "to": "/tools/taxyl"
-            },
-            {
-                "title": "TaXyl",
-                "to": "/tools/taxyl"
+                "title": "Biofilm Inhibitory Peptide Prediction",
+                "to": "/tools/bipcls"
             }
         ]
     },
