@@ -1,5 +1,5 @@
 import React from 'react'
-import { Spring, animated } from 'react-spring/renderprops'
+import { Spring } from 'react-spring/renderprops'
 
 const Lines = ({ pages, pageIndex }) => {
     let lines = []
@@ -17,10 +17,10 @@ const Lines = ({ pages, pageIndex }) => {
                 }}>
                 {(props) => (
                     <div className="ScrollBar-line" >
-                        <animated.svg height={8} width={props.width}>
-                            <animated.line className={props.className}
+                        <svg height={8} width={props.width}>
+                            <line className={props.className}
                                 x1={0} y1={0} x2={props.width} y2={0} />
-                        </animated.svg>
+                        </svg>
                     </div>
                 )}
             </Spring>

@@ -3,38 +3,31 @@ import axios from 'axios'
 /* Constants */
 
 const URL = 'http://cbb-ut.gigfa.com/wp-json'
-const config = {
-    headers: {
-        //'Access-Control-Allow-Origin': '*'
-    },
-    withCredentials: true
+const URL2 = 'http://cbb-ut.gigfa.com/wp-json/wp/v2'
+const config = { withCredentials: true, }
+
+export const PAGES = {
+    ABOUT: 'ABOUT',
+    CONTACT: 'CONTACT',
+    SITEMAP: 'SITEMAP',
+    PRIVACY: 'PRIVACY',
+    PEOPLE: 'PEOPLE',
+    TOOLS: 'TOOLS',
 }
 
-const pageIds = {
-    people: 52,
-    about: 10,
-    tools: 7
+export const CATEGORIES = {
+    NEWS: 'NEWS',
+    BLOG: 'BLOG'
 }
 
 /* Functions */
 
-const getCatsIds = (cat) => 
+const getCatIdBySlug = (cat) => 
     axios.get(
-        `${URL}/wp/v2/categories?slug="${cat}"`, 
+        `${URL2}/categories?slug=${cat}`, //chngd
         config
     )
     .then(res => res.data[0].id)
-
-const pagesSwitch = (page) => {
-    switch (page) {
-        case 'PEOPLE': return pageIds.people
-        case 'ABOUT': return pageIds.about
-        case 'TOOLS': return pageIds.tools
-        default: return null
-    }
-}
-
-
 
 /* getters */
 
@@ -49,16 +42,23 @@ export function getInfo() {
     }
 }
 
-export function getPostsByCat(cat) {
+export function getPostsByCat(cat,page,per_page) {
 
-    const url = `${URL}/wp/v2/posts?categories=`
+    const req = getCatIdBySlug(cat)
+        .then((id) => {
 
-    let req = getCatsIds(cat).then((id) => 
-                    axios.get(
-                        url + id, 
-                        config
-                    ).then(res => res.data)
-                )
+            const CAT = `categories=${id}`
+            const PAGE = page? `&page=${page}` : ''
+            const PER_PAGE = per_page? `&per_page=${per_page}` : ''
+
+            return axios.get(
+                `${URL2}/posts?${CAT}${PAGE}${PER_PAGE}`, 
+                config
+            )
+            .then(res => 
+                res.data
+            )}
+        )
 
     return {
         type: `${cat}`, 
@@ -66,30 +66,38 @@ export function getPostsByCat(cat) {
     }
 }
 
-export function getPage(page) {
-    const pageId = pagesSwitch(page)
+export function getPageBySlug(slug) {
 
     const req = axios.get(
-        `${URL}/wp/v2/pages/${pageId}`, 
+        `${URL2}/pages?slug=${slug}`, 
         config
     ).then(res => res.data)
 
     return {
-        type: `${page}`,
+        type: `${slug}`,
         payload: req
     }
 }
 
-export function getPagesByParent(parent) {
-    const parentId = pagesSwitch(parent)
+/* -- Search -- */
 
-    const req = axios.get(
-        `${URL}/wp/v2/pages?parent=${parentId}`, 
-        config
-    ).then(res => res.data)
+export function findPostsByCat(cat) {
+
+    const url = `${URL2}/posts?categories=`
+
+    let req = getCatIdBySlug(cat)
+        .then((id) => 
+            axios.get(
+                url + id, 
+                config
+            )
+            .then(res => 
+                res.data
+            )
+        )
 
     return {
-        type: `${parent}_PAGES`,
+        type: `${cat}`, 
         payload: req
     }
 }

@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { Transition, animated } from 'react-spring/renderprops'
+import { Transition } from 'react-spring/renderprops'
 
 import './nav-bar.scss'
 import { headerLinks } from '../../../../static/config'
@@ -19,16 +19,17 @@ class NavBar extends PureComponent {
     renderBackground() {
         return (
             <Transition
-            items={this.props.isScrolled}
-            from={{ 
-                backgroundColor: 'rgba(0,0,0,1)', 
-                width: '100%', height: '100%', 
-                position: 'absolute' 
-            }}
-            enter={{ opacity: 0.5 }}
-            leave={{ opacity: 0 }} >
+                items={this.props.isScrolled}
+                from={{ 
+                    backgroundColor: 'rgba(0,0,0,1)', 
+                    width: '100%', height: '100%', 
+                    position: 'absolute', 
+                    opacity: 0
+                }}
+                enter={{ opacity: 0.5 }}
+                leave={{ opacity: 0 }} >
         
-            { show => show && (props => <animated.div style={props} />) }
+            { show => show && (props => <div style={props} />) }
             </Transition>
         )
     }

@@ -1,10 +1,11 @@
+import { CATEGORIES } from '../actions'
 
 export default function(state = {}, action) {
     
     switch(action.type) {
-        case 'NEWS': 
+        case CATEGORIES.NEWS: 
             return {...state, news: action.payload}
-        case 'BLOG': 
+        case CATEGORIES.BLOG: 
             return {...state, blog: action.payload}
         default:
             return state

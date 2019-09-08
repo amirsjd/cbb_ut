@@ -11,7 +11,7 @@ export default [
                 backgroundPosition: 'center',
                 backgroundAttachment:  'fixed',
                 backgroundRepeat: 'no-repeat',
-                filter: 'brightness(25%) blur(1px)',
+                filter: 'brightness(10%) blur(1px)',
                 position: 'absolute',
                 left: '50%',
                 top: '50%',
@@ -23,7 +23,7 @@ export default [
     {
         speed: 0,
         style: {
-            boxShadow: 'inset 0px 10px 20px -10px black, inset 0px -10px 20px -10px black',
+            boxShadow: 'inset 0px 20px 30px -10px black, inset 0px -20px 30px -10px black',
             borderBottom: 0 
         }
     }

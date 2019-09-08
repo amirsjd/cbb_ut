@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import { animated } from 'react-spring'
 
 import './title-bar.scss'
 
@@ -12,9 +11,9 @@ class TitleBar extends PureComponent {
                     <line x1={0} y1={0} x2="8em" y2={0} className="TitleLine" />
                 </svg>
                 
-                <animated.div className="Title" style={{}}>
+                <div className="Title" style={{}}>
                     {this.props.pageTitle}
-                </animated.div>
+                </div>
 
                 <svg width="8em" height={5}>
                     <line x1={0} y1={0} x2="8em" y2={0} className="TitleLine" />

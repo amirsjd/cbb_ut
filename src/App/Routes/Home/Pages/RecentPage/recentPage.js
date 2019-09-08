@@ -1,9 +1,5 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux';
-
-import { getPostsByCat } from '../../../../../actions'
 
 import PageLayout from '../../../../components/pages/PageLayout';
 import './recent-page.scss'
@@ -18,9 +14,7 @@ class Page extends PureComponent {
         speed: 0.2
     }
 
-    componentWillMount() {
-        this.props.getPostsByCat('NEWS')
-    }
+
 
     render() {
 
@@ -30,7 +24,7 @@ class Page extends PureComponent {
                     Recent News
                 </div> 
 
-                <NewsSlider news={this.props.data.news} />
+                <NewsSlider page={1} perPage={8} />
 
                 <Link to="/news">
                     <div className="
@@ -44,16 +38,5 @@ class Page extends PureComponent {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        data: state.posts
-    }
-}
 
-const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({
-        getPostsByCat
-    }, dispatch)
-}
-
-export default connect(mapStateToProps,mapDispatchToProps)(Page);
+export default Page;

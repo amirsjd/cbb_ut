@@ -60,6 +60,20 @@ export default [
     {
         speed: 0,
         children: 
+            <img alt="" src="/assets/cells/14.png"
+                style={{
+                    position: 'absolute',
+                    left: 'calc(50% - 4em)',
+                    top: 'calc(20% - 4em)',
+                    height: '8em',
+                    filter: 'brightness(90%)',
+                    opacity: 0.8,
+                    animation: 'anti-spin 120s linear infinite',
+                }} />
+    },
+    {
+        speed: 0,
+        children: 
             <img alt="" src="/assets/cells/6.png"
                 style={{
                     position: 'absolute',

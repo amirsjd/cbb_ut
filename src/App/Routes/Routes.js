@@ -14,6 +14,9 @@ import News from './News/News'
 import People from './People/People'
 import Tools from './Tools/Tools'
 import NotFound from './404/NotFound'
+import Privacy from './Privacy/Privacy'
+import Sitemap from './Sitemap/Sitemap'
+import Search from './Search/Search'
 
 class Routes extends Component { 
 
@@ -30,27 +33,28 @@ class Routes extends Component {
             <Layout>
                 <Switch>
                     <Redirect from="/login" to="/wp-login" />
-                    <Redirect from="/home" to="/" />
 
-                    <Route path="/blog/posts/:postid" component={Blog} />
-                    <Route path="/blog/authors/:author" component={Blog} />
+                    <Route path="/search" component={Search}/>
+
+                    <Route path="/blog/posts/:id" component={withContext(Blog)} />
+                    <Route path="/blog/pages/:i" component={withContext(Blog)} />
                     <Route path="/blog" exact component={withContext(Blog)} />
                     
-                    <Route path="/news/:category" component={News} />
                     <Route path="/news/:id" component={News} />
                     <Route path="/news" exact component={News} />
                     
-                    <Route path="/tools/:tool" component={Tools} />
+                    <Route path="/tools/:slug" component={Tools} />
                     <Route path="/tools" exact component={Tools} />
 
-                    <Route path="/people/:title" component={People} />
+                    <Route path="/people/:slug" component={People} />
                     <Route path="/people" exact component={People} />
 
+                    <Route path="/privacy" component={Privacy} />
+                    <Route path="/sitemap" component={Sitemap} />
                     <Route path="/contact" component={Contact} />
                     <Route path="/about" component={withContext(About)} />
                     
-                    <Route path="/home" component={Home} />
-                    
+                    <Redirect from="/home" to="/" />
                     <Route path="/" exact component={withContext(Home)} />
                     <Route component={NotFound} />
                 </Switch>
