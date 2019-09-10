@@ -5,7 +5,7 @@ import PageLayout from '../../../../components/pages/PageLayout';
 import './recent-page.scss'
 
 import layers from './layers'
-import NewsSlider from './NewsSlider/newsSlider'
+import NewsSlider from '../../../../components/widgets/NewsSlider/newsSlider'
 
 class Page extends PureComponent { 
 

@@ -12,6 +12,8 @@ import Contact from './Contact/Contact'
 import Home from './Home/Home'
 import News from './News/News'
 import People from './People/People'
+import PeopleGroup from './People/PeopleGroup'
+import Person from './People/Person'
 import Tools from './Tools/Tools'
 import NotFound from './404/NotFound'
 import Privacy from './Privacy/Privacy'
@@ -28,6 +30,7 @@ class Routes extends Component {
 
     render() {
         const withContext = this.withContext
+        const people_routes = "/people/:slug(graduates|professors|staff|faculty)"
 
         return (
             <Layout>
@@ -46,8 +49,9 @@ class Routes extends Component {
                     <Route path="/tools/:slug" component={Tools} />
                     <Route path="/tools" exact component={Tools} />
 
-                    <Route path="/people/:slug" component={People} />
-                    <Route path="/people" exact component={People} />
+                    <Route path="/person/:slug" component={Person} />
+                    <Route path={people_routes} component={PeopleGroup} />
+                    <Route path="/people" exact component={withContext(People)} />
 
                     <Route path="/privacy" component={Privacy} />
                     <Route path="/sitemap" component={Sitemap} />

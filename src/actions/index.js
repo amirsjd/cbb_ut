@@ -6,35 +6,51 @@ const URL = 'http://cbb-ut.gigfa.com/wp-json'
 const URL2 = 'http://cbb-ut.gigfa.com/wp-json/wp/v2'
 const config = { withCredentials: true, }
 
-export const PAGES = {
-    ABOUT: 'ABOUT',
-    CONTACT: 'CONTACT',
-    SITEMAP: 'SITEMAP',
-    PRIVACY: 'PRIVACY',
-    PEOPLE: 'PEOPLE',
-    TOOLS: 'TOOLS',
+export const CATEGORIES = {
+    NEWS:       'NEWS',
+    BLOG:       'BLOG'
 }
 
-export const CATEGORIES = {
-    NEWS: 'NEWS',
-    BLOG: 'BLOG'
+export const PAGES = {
+    ABOUT:      'ABOUT',
+    CONTACT:    'CONTACT',
+    SITEMAP:    'SITEMAP',
+    PRIVACY:    'PRIVACY',
+    PEOPLE:     'PEOPLE',
+    TOOLS:      'TOOLS',
 }
+
+export const PEOPLE = {
+    FACULTY:    'FACULTY',
+    STAFF:      'STAFF',
+    PROFESSORS: 'PROFESSORS',
+    GRADUATES:  'GRADUATES'
+}
+
 
 /* Functions */
 
-const getCatIdBySlug = (cat) => 
+const getCatId = (slug) => 
     axios.get(
-        `${URL2}/categories?slug=${cat}`, //chngd
+        `${URL2}/categories?slug=${slug}`, //chngd
         config
-    )
-    .then(res => res.data[0].id)
+    ).then(res => res.data[0].id)
+    
+const getPageId = (slug) => 
+    axios.get(
+        `${URL2}/pages?slug=${slug}`,
+        config
+    ).then(res => res.data[0].id)
+
+
 
 /* getters */
 
 export function getInfo() {
 
-    const req = axios.get(`${URL}/`, config)
-                .then(res => res.data)
+    const req = axios.get(
+        `${URL}/`, config
+        ).then(res => res.data)
 
     return {
         type: 'INFO', 
@@ -42,9 +58,9 @@ export function getInfo() {
     }
 }
 
-export function getPostsByCat(cat,page,per_page) {
+export function getPostsByCat(slug,page,per_page) {
 
-    const req = getCatIdBySlug(cat)
+    const req = getCatId(slug)
         .then((id) => {
 
             const CAT = `categories=${id}`
@@ -54,24 +70,23 @@ export function getPostsByCat(cat,page,per_page) {
             return axios.get(
                 `${URL2}/posts?${CAT}${PAGE}${PER_PAGE}`, 
                 config
-            )
-            .then(res => 
+            ).then(res => 
                 res.data
             )}
         )
 
     return {
-        type: `${cat}`, 
+        type: `${slug}`, 
         payload: req
     }
 }
 
-export function getPageBySlug(slug) {
+export function getPage(slug) {
 
     const req = axios.get(
         `${URL2}/pages?slug=${slug}`, 
         config
-    ).then(res => res.data)
+    ).then(res => res.data[0])
 
     return {
         type: `${slug}`,
@@ -79,27 +94,33 @@ export function getPageBySlug(slug) {
     }
 }
 
-/* -- Search -- */
 
-export function findPostsByCat(cat) {
+// for People, Tools, People children
+export function getPageChildren(slug) {
+    
+    const req = getPageId(slug)
+    .then((id) => {
 
-    const url = `${URL2}/posts?categories=`
+        const PARENT = `parent=${id}`
+        const PER_PAGE = `&per_page=${100}`
 
-    let req = getCatIdBySlug(cat)
-        .then((id) => 
-            axios.get(
-                url + id, 
-                config
-            )
-            .then(res => 
-                res.data
-            )
+        return axios.get(
+            `${URL2}/pages?${PARENT}${PER_PAGE}`, 
+            config
         )
+        .then(res => 
+            res.data
+        )}
+    )
 
     return {
-        type: `${cat}`, 
+        type: `${slug}_CHILDREN`, 
         payload: req
     }
 }
+
+/* -- Search -- */
+
+//export function findPostsByCat(cat) 
 
 /* cleaners */

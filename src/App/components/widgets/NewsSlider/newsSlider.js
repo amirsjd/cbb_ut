@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 
-import { getPostsByCat, CATEGORIES } from '../../../../../../actions'
+import { getPostsByCat, CATEGORIES } from '../../../../actions'
 
 import NewsSliderItem from './newsSliderItem'
 
@@ -27,8 +27,6 @@ class NewsSlider extends PureComponent {
     
     render() {
         const news = this.props.data.news
-
-        console.log('did')
         return (
             <div className="NewsSlider scrollableContainer" >
                 {this.renderNews(news)} 
