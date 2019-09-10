@@ -9,8 +9,6 @@ export default [
                 backgroundImage: 'url("/assets/Home/bg-2.jpg")',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                backgroundAttachment:  'fixed',
-                backgroundRepeat: 'no-repeat',
                 filter: 'brightness(10%) blur(1px)',
                 position: 'absolute',
                 left: '50%',

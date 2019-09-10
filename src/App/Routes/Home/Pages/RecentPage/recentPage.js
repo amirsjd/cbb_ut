@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom'
 
-import PageLayout from '../../../../components/pages/PageLayout';
+import PageLayout from '../../../../components/widgets/Parallax/PageLayout';
 import './recent-page.scss'
 
 import layers from './layers'

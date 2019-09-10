@@ -1,61 +1,6 @@
 .People {
-
-    background-color: rgba(0,0,0,0.95);
-    width: 100vw;
+    position: relative;
     height: 100vh;
-
-    .groups {
-
-        margin: {top: 8em;}
-        position: relative;
-        left: 50%;
-        transform: translate(-50%,0);
-        display: flex;
-        flex-wrap: wrap;
-        width: 72vw;
-        
-        font-family: 'Lexend Giga', sans-serif;
-        text-align: center;
-
-        .description {
-            padding: 2em 6em;
-        }
-
-        .group-banner {
-            margin: 0.35vw;
-            position: relative;
-            display: flex;
-            min-height: 6.6em;
-            min-width: 35vw;
-            overflow: hidden;
-            border-radius: 3px;
-
-            img {
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%,-50%);
-                width: 100%;
-                object-fit: cover;
-                z-index: -1;
-                display: block;
-                filter: blur(2px) brightness(0.95) contrast(1.1)
-            }
-
-            span {
-                margin: 0;
-                display: block;
-                position: absolute;
-                left: 50%; top: 50%;
-                transform: translate(-50%,-50%);
-                font-size: 1.05em;
-                letter-spacing: 6px;
-                text-transform: uppercase;
-                text-shadow: 0 0 32px black,
-                            0 0 28px black,
-                            0 0 12px black
-                            0 0 2px black;
-            }
-        }
-    }
+    width: 100vw;
+    background-color: rgba($color: #222222, $alpha: 1);
 }

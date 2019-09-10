@@ -5,8 +5,8 @@ import './page-layout.scss'
 
 class PageLayout extends Component {
 
-    renderBgLayers = () => {
-        return this.props.layers.map((layer, i) => 
+    renderLayers = (layers) => {
+        return layers.map((layer, i) => 
             {
                 const { style, speed, children, factor, offset } = layer
                 return (
@@ -26,20 +26,20 @@ class PageLayout extends Component {
     }
 
     render() {
+
+        const { offset, style, children, layers } = this.props
+
         return (
             <>
-                {
-                    this.props.layers && 
-                    this.renderBgLayers()
-                }
+                {layers && this.renderLayers(layers)}
 
                 <ParallaxLayer 
-                    offset={this.props.offset} 
+                    offset={offset} 
                     speed={0} 
                     className="pageLayer-content"
-                    style={this.props.style}>
+                    style={style}>
                     
-                    {this.props.children}
+                    {children}
                 </ParallaxLayer>
             </>
         )

@@ -1,0 +1,14 @@
+.People {
+    .desc-page {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+        font-family: 'Lexend Giga', sans-serif;
+        font-size: 3em;
+        font-weight: bolder;
+        cursor: pointer;
+    }
+}

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import { footerLinks as data, CURRENT_YEAR } from '../../../../static/config'
 
-import PageLayout from '../PageLayout'
+import PageLayout from '../../widgets/Parallax/PageLayout'
 import './footer.scss'
 
 import LinksGroup from './linksGroup'

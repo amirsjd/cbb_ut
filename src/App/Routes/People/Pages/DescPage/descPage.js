@@ -1,21 +1,27 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+
+import PageLayout from '../../../../components/widgets/Parallax/PageLayout'
+
+import './desc-page.scss'
+import layers from './layers'
 
 class Page extends Component {
+
+    config = {
+        offset: this.props.offset,
+        speed: 0
+    }
+    
     render() {
+        const { scrollTo } = this.props
         return (
-            <div className="groups">
-                {this.renderGroups(children)}
-                
-                <div className="description"
-                    dangerouslySetInnerHTML={{
-                        __html: data && data.content? 
-                            data.content.rendered 
-                            : 
-                            null
-                        }}>
+            <PageLayout {...this.config} layers={layers}>
+                <div className="desc-page"
+                    onClick={() => scrollTo(1)}>
+                    People.
                 </div>
-            </div>
-        );
+            </PageLayout>
+        )
     }
 }
 

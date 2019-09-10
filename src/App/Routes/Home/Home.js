@@ -70,7 +70,7 @@ class Home extends PureComponent {
             <div className="Home">
                 
                 <Parallax
-                    className="HomePlx scrollableContainer"
+                    className="parallax scrollableContainer"
                     ref={ref => this.parallax = ref}
                     pages={this.config.pages}
                     vertical
