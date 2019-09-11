@@ -18,7 +18,7 @@ class Page extends Component {
             <PageLayout {...this.config} layers={layers}>
                 <div className="desc-page"
                     onClick={() => scrollTo(1)}>
-                    People.
+                    <>People.</>
                 </div>
             </PageLayout>
         )

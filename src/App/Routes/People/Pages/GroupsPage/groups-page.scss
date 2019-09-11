@@ -22,6 +22,9 @@
 
             .description {
                 padding: 3em 12em;
+                font-weight: 100;
+                font-family: 'Quicksand', sans-serif;
+                font-size: 1em;
             }
 
             .group-banner {
@@ -33,6 +36,13 @@
                 overflow: hidden;
                 border-radius: 3px;
 
+                text-shadow: 
+                    0 0 86px black,
+                    0 0 72px black,
+                    0 0 56px black,
+                    0 0 32px black,
+                    0 0 24px black;
+
                 img {
                     position: absolute;
                     left: 50%;
@@ -42,10 +52,10 @@
                     object-fit: cover;
                     z-index: -1;
                     display: block;
-                    filter: blur(2px) brightness(0.95) contrast(1.1)
+                    filter: blur(2px) brightness(0.85) contrast(1.1)
                 }
 
-                span {
+                p {
                     margin: 0;
                     display: block;
                     position: absolute;
@@ -54,10 +64,6 @@
                     font-size: 1.1em;
                     letter-spacing: 6px;
                     text-transform: uppercase;
-                    text-shadow: 0 0 32px black,
-                                0 0 28px black,
-                                0 0 12px black
-                                0 0 2px black;
                 }
             }
         }

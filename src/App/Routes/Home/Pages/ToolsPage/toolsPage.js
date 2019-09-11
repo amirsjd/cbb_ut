@@ -13,7 +13,7 @@ class Page extends PureComponent {
     render() {
         return (
             <PageLayout {...this.config} layers={layers}>
-                TOOLS
+                
             </PageLayout>
         )
     }

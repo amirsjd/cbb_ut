@@ -37,7 +37,7 @@ class People extends Component {
                 config={{
                     mass: 1,
                     friction: 100,
-                    tension: 500
+                    tension: 1000
                 }}>
                     <Pages scrollTo={this.scrollTo} />
                 </Parallax>

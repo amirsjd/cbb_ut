@@ -8,17 +8,13 @@ class PageLayout extends Component {
     renderLayers = (layers) => {
         return layers.map((layer, i) => 
             {
-                const { style, speed, children, factor, offset } = layer
                 return (
                     <ParallaxLayer 
-                        key={i} 
-                        style={style} 
-                        speed={speed}
-                        offset={offset || this.props.offset}
-                        factor={factor}
+                        {...layer} key={i}
+                        offset={layer.offset || this.props.offset}
                         className="pageLayer">
 
-                        {children}
+                        {layer.children}
                     </ParallaxLayer>
                 )
             }
@@ -27,17 +23,14 @@ class PageLayout extends Component {
 
     render() {
 
-        const { offset, style, children, layers } = this.props
+        const { children, layers } = this.props
 
         return (
             <>
                 {layers && this.renderLayers(layers)}
 
-                <ParallaxLayer 
-                    offset={offset} 
-                    speed={0} 
-                    className="pageLayer-content"
-                    style={style}>
+                <ParallaxLayer {...this.props}
+                    className="pageLayer-content">
                     
                     {children}
                 </ParallaxLayer>

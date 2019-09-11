@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { Transition, config as springConfig } from 'react-spring/renderprops'
 
 import { getPage, getPageChildren, PAGES } from '../../../../../actions'
 
@@ -24,16 +25,27 @@ class Page extends Component {
 
     renderGroups = (children) => {
         if (children && children.length > -1) 
-            return children.map((child, i) => (
-                <Link to={'/' + child.slug} key={i}>
-                    <div className="group-banner">
-                        <div dangerouslySetInnerHTML={{
-                            __html: child.content.rendered
-                        }} />
-                        <span>{child.title.rendered}</span>
-                    </div>
-                </Link>
-            ))
+            return (
+                <Transition
+                    config={springConfig.molasses}
+                    items={children} keys={child => child.id}
+                    trail={250}
+                    from={{ opacity: 0 }}
+                    enter={{ opacity: 1 }}
+                    leave={{ opacity: 0 }}>
+                        
+                    {child => props => (
+                        <Link to={'/people/' + child.slug} key={child.id}>
+                            <div className="group-banner" style={props}>
+                                <div dangerouslySetInnerHTML={{
+                                    __html: child.content.rendered
+                                }} />
+                                <p>{child.title.rendered}</p>
+                            </div>
+                        </Link>
+                    )}
+                </Transition>
+            )
     }
 
     render() {

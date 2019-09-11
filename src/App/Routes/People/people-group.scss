@@ -1,0 +1,9 @@
+.PeopleGroup {
+    display: flex;
+    .nav-link {
+        display: block;
+    }
+    .active {
+        color: red;
+    }
+}

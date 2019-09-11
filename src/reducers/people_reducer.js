@@ -1,16 +1,18 @@
-import { PEOPLE } from '../actions'
+import { PEOPLE, CLEAR } from '../actions'
 
 export default function(state = {}, action) {
     
     switch(action.type) {
         case PEOPLE.FACULTY + '_CHILDREN': 
-            return {...state, faculty:    action.payload}
+            return {...state, children: action.payload}
         case PEOPLE.STAFF + '_CHILDREN': 
-            return {...state, staff:      action.payload}
+            return {...state, children: action.payload}
         case PEOPLE.PROFESSORS + '_CHILDREN': 
-            return {...state, professors: action.payload}
+            return {...state, children: action.payload}
         case PEOPLE.GRADUATES + '_CHILDREN': 
-            return {...state, graduates:  action.payload}
+            return {...state, children: action.payload}
+        case CLEAR + '_CHILDREN': 
+            return {...state, children: action.payload}
         default:
             return state
     }

@@ -13,7 +13,8 @@ class Page extends PureComponent {
     render() {
         return (
             <PageLayout {...this.config} layers={layers}>
-                <span onClick={() => this.props.setPlxProps('SCROLL', 0)}>Some Content</span>
+                EVENTSSSSSSS!!!!!!!
+                new posts category : events
             </PageLayout>
         )
     }

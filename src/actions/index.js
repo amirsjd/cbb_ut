@@ -6,6 +6,8 @@ const URL = 'http://cbb-ut.gigfa.com/wp-json'
 const URL2 = 'http://cbb-ut.gigfa.com/wp-json/wp/v2'
 const config = { withCredentials: true, }
 
+export const CLEAR = 'CLEAR'
+
 export const CATEGORIES = {
     NEWS:       'NEWS',
     BLOG:       'BLOG'
@@ -124,3 +126,10 @@ export function getPageChildren(slug) {
 //export function findPostsByCat(cat) 
 
 /* cleaners */
+
+export function clearLastChildren() {
+    return {
+        type: `CLEAR_CHILDREN`, 
+        payload: null
+    }
+}
