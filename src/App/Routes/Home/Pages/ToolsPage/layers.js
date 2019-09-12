@@ -9,7 +9,7 @@ export default [
                 backgroundImage: 'url("/assets/Home/bg-2.jpg")',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                filter: 'brightness(10%) blur(1px)',
+                filter: 'brightness(10%) blur(3px)',
                 position: 'absolute',
                 left: '50%',
                 top: '50%',
@@ -21,7 +21,7 @@ export default [
     {
         speed: 0,
         style: {
-            boxShadow: 'inset 0px 20px 30px -10px black, inset 0px -20px 30px -10px black',
+            boxShadow: 'inset 0px 25px 35px -10px black, inset 0px -25px 35px -10px black',
             borderBottom: 0 
         }
     }

@@ -6,7 +6,7 @@ import { Transition, config as springConfig } from 'react-spring/renderprops'
 
 import { getInfo } from '../../../../../actions'
 
-import './desc-page.scss'
+import './style.scss'
 import PageLayout from '../../../../components/widgets/Parallax/PageLayout'
 import layers from './layers'
 

@@ -98,16 +98,17 @@ export function getPage(slug) {
 
 
 // for People, Tools, People children
-export function getPageChildren(slug) {
+export function getPageChildren(slug,page,per_page) {
     
     const req = getPageId(slug)
     .then((id) => {
 
         const PARENT = `parent=${id}`
-        const PER_PAGE = `&per_page=${100}`
+        const PAGE = page? `&page=${page}` : ''
+        const PER_PAGE = per_page? `&per_page=${per_page}` : ''
 
         return axios.get(
-            `${URL2}/pages?${PARENT}${PER_PAGE}`, 
+            `${URL2}/pages?${PARENT}${PAGE}${PER_PAGE}`, 
             config
         )
         .then(res => 

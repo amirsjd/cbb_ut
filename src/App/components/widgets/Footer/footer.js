@@ -14,7 +14,7 @@ class FooterPage extends Component {
 
     config = {
         offset: this.props.offset,
-        speed: 0.1
+        speed: 0
     }
 
     renderGroups = () => 

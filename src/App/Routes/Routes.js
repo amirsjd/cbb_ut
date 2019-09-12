@@ -50,7 +50,8 @@ class Routes extends Component {
                     <Route path="/tools" exact component={Tools} />
 
                     <Route path="/person/:slug" component={Person} />
-                    <Route path={people_routes} component={PeopleGroup} />
+                    <Route path={people_routes + '/:page'} component={PeopleGroup} />
+                    <Redirect from={people_routes} to={people_routes + '/1'} />
                     <Route path="/people" exact component={withContext(People)} />
 
                     <Route path="/privacy" component={Privacy} />

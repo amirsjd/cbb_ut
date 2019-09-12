@@ -30,17 +30,16 @@ class PeopleGroup extends PureComponent {
     }
 
     componentWillMount() {
-        const slug = this.props.match.params.slug
-        this.getGroupData(slug)
+        const { slug, page } = this.props.match.params
+        this.getGroupData(slug,page)
     }
 
     componentWillUpdate(nextProps) {
-        const slug = nextProps.match.params.slug
-        console.log(slug)
+        const { slug, page } = this.props.match.params
         
         if(this.props.match.params.slug !== slug) {
             this.clearGroupData()
-            this.getGroupData(slug)
+            this.getGroupData(slug,page)
         }
     }
 

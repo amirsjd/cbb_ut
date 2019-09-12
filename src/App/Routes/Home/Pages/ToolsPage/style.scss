@@ -1,0 +1,31 @@
+.Home {
+    .toolsPage {
+        .slider-container {
+            display: flex;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+
+            .slider-content {
+                display: block;
+                width: 60vw;
+                height: 50vh;
+                background-image: radial-gradient(rgba(129, 203, 221, 0.95), rgba(82, 169, 190, 0.95));
+                border-radius: 1rem;
+                box-shadow: 0 0 24px 10px black;
+                padding: 1rem;
+            }
+            .slider-button {
+                z-index: 10;
+                height: min-content;
+                width: min-content;
+                padding: 14px 14px;
+                font-size: 1.25em;
+                margin-top: calc(25vh - 8px);
+                margin-left: -20px;
+                margin-right: -20px;
+            }
+        }
+    }
+}

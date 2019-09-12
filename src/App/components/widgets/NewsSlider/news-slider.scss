@@ -1,17 +1,13 @@
 .NewsSlider {
-    display: flex;
-    overflow-y: hidden;
-    overflow-x: scroll;
-    padding: 25px 25px 15px 25px;
-    margin: 0 0 0 75px;
+    margin: 0 8em;
 }
 
 .NewsSliderItem {
-    margin: 10px;
+    margin: 20px 30px;
     max-width: 12em;
     max-height: 48vh;
     min-height: 48vh;
-    min-width: 12em;
+    min-width: 15vw;
     overflow: hidden;
     padding: 12px;
     position: relative;

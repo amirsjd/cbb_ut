@@ -1,8 +1,8 @@
 import React from 'react'
-import DescPage from './DecsPage/descPage'
-import RecentPage from './RecentPage/recentPage'
-import ToolsPage from './ToolsPage/toolsPage'
-import AboutPage from './AboutPage/aboutPage'
+import DescPage from './DecsPage'
+import RecentPage from './RecentPage'
+import ToolsPage from './ToolsPage'
+import AboutPage from './AboutPage'
 import Footer from '../../../components/widgets/Footer/footer'
 
 const pageTitles = ['Welcome', 'Recent', 'Tools', 'About', 'CBB']

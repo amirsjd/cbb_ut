@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom'
 
 import PageLayout from '../../../../components/widgets/Parallax/PageLayout';
-import './recent-page.scss'
+import './style.scss'
 
 import layers from './layers'
 import NewsSlider from '../../../../components/widgets/NewsSlider/newsSlider'
@@ -11,7 +11,7 @@ class Page extends PureComponent {
 
     config = {
         offset: this.props.offset,
-        speed: 0.2
+        speed: 0
     }
 
 
