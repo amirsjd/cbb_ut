@@ -60,10 +60,11 @@ class NewsSlider extends PureComponent {
             ),
             customPaging: i => (
                 <div key={i}
+                    className="slider-dot"
                     style={
                         i === this.state.currentSlide/2 ?
                         { color: 'rgba(255,255,255,1)' } :
-                        { color: 'rgba(22,22,22,0.85)' }
+                        { color: 'rgba(22,22,22,0.55)' }
                     }
                 >
                     •
