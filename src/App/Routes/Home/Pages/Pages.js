@@ -1,7 +1,7 @@
 import React from 'react'
 import DescPage from './DecsPage'
 import RecentPage from './RecentPage'
-import ToolsPage from './ToolsPage'
+import ToolsPage from './EventsPage'
 import AboutPage from './AboutPage'
 import Footer from '../../../components/widgets/Footer/footer'
 

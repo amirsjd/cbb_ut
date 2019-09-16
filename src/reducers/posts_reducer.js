@@ -7,6 +7,8 @@ export default function(state = {}, action) {
             return {...state, news: action.payload}
         case CATEGORIES.BLOG: 
             return {...state, blog: action.payload}
+        case CATEGORIES.EVENTS:
+            return {...state, events: action.payload}
         default:
             return state
     }

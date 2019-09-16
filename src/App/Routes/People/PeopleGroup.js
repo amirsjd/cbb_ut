@@ -1,13 +1,23 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 
 import { getPageChildren, clearLastChildren, PEOPLE } from '../../../actions'
 
+import PersonCard from '../../components/widgets/PersonCard/PersonCard'
+
 import './people-group.scss'
 
+const slugs = ['faculty', 'staff', 'professors', 'graduates']
+
 class PeopleGroup extends PureComponent {
+
+    config = {
+        hasNavBar: true,
+        hasScrollBar: false,
+        hasTitleBar: false
+    }
 
     getActionType = (slug) => {
         switch(slug) {
@@ -32,15 +42,11 @@ class PeopleGroup extends PureComponent {
     componentWillMount() {
         const { slug, page } = this.props.match.params
         this.getGroupData(slug,page)
+        this.props.context.updateStatus({...this.config})
     }
 
-    componentWillUpdate(nextProps) {
-        const { slug, page } = this.props.match.params
-        
-        if(this.props.match.params.slug !== slug) {
-            this.clearGroupData()
-            this.getGroupData(slug,page)
-        }
+    componentWillUnmount() {
+        this.clearGroupData()
     }
 
     renderNavLinks = (groups) => 
@@ -54,19 +60,32 @@ class PeopleGroup extends PureComponent {
             </NavLink>
         )
 
-    render() {
+    renderChildren = (children) => 
+        children && children.length > 0 ?
+        children.map((child,i) => 
+            <Link key={i} className="person-card"
+                to={'/person/'+child.slug}>
+                <PersonCard data={child} id={i} key={i} />
+            </Link>
+        ) : null
 
-        const slugs = ['faculty', 'staff', 'professors', 'graduates']
+    render() {
+        const { children } = this.props
         
         return (
             <div className="PeopleGroup">
-                <div style={{marginTop:100}}>
-                    {this.renderNavLinks(slugs)}
-                </div>
-                <div>
-                    {this.props.match.params.slug}
+                <div className="bg-img" />
 
-                    {console.log(this.props.children)}
+                <div className="col-left">
+                    <div className="nav-links">
+                        {this.renderNavLinks(slugs)}
+                    </div>
+                </div>
+                
+                <div className="col-main scrollableContainer">
+                    <div className="cards-container">
+                        {this.renderChildren(children)}
+                    </div>
                 </div>
             </div>
         )

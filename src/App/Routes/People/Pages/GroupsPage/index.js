@@ -8,7 +8,7 @@ import { getPage, getPageChildren, PAGES } from '../../../../../actions'
 
 import PageLayout from '../../../../components/widgets/Parallax/PageLayout'
 
-import './groups-page.scss'
+import './styles.scss'
 import layers from './layers'
 
 class Page extends Component {

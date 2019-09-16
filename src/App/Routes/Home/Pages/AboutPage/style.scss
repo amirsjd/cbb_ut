@@ -1,0 +1,50 @@
+.Home {
+    .about-page {
+        
+        color: rgb(214, 214, 214);
+        display: flex;
+        
+        .left-col {
+            padding: 102px 102px;
+            display: block;
+            position: relative;
+            width: 30%;
+
+            .title {
+                position: relative;
+                text-align: left;
+                font-family: 'Manjari', sans-serif;
+                font-size: 2.5rem;
+                //letter-spacing: -0.2rem;
+                font-weight: bolder;
+                text-transform: uppercase;
+            }
+            .details {
+                position: relative;
+                font-size: 1.1rem;
+                font-family: 'Quicksand', sans-serif;
+                text-align: left;
+                margin-top: 2rem;
+                margin-bottom: 3rem;
+
+                a { display: none; }
+            }
+        }
+
+        .col-right {
+            display: block;
+            position: relative;
+            width: 70%;
+            background: white;
+            height: 100vw;
+
+            img {
+                float: left;
+                width: 100%;
+                height: 50%;
+                object-fit: cover;
+                filter: brightness(0.25);
+            }
+        }
+    }
+}

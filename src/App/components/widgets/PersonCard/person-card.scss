@@ -1,0 +1,87 @@
+
+.PersonCard {
+
+    display: block;
+    background: rgba(255, 255, 255, 0.651);
+    width: 14rem;
+    border-radius: 8px;
+    overflow: hidden;
+    color: black;
+    font-size: 1rem;
+    height: 22rem;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+
+    transition: all 0.12s ease;
+
+    &:hover {
+        box-shadow: 0 0 20px rgba(75, 75, 75, 0.5);
+    }
+
+    .header {
+        
+        @for $i from 1 through 20 {
+            &-#{$i} {
+                background-color: rgba(random(56)+100, random(56)+100, random(56)+100, 0.85);
+            }
+        }
+
+        max-height: 10rem;
+        height: 7rem;
+        display: block;
+        position: relative;
+        text-align: center;
+        padding: 30px 0 0 0;
+
+        .title {
+            font-weight: bolder;
+            margin: 0;
+            padding: 0;
+        }
+
+        .excerpt {
+            font-size: 0.65rem;
+            margin: -8px 0;
+            padding: 0;
+        }
+
+        img {
+            width: 4rem;
+            background: rgba(255, 255, 255, 0.692);
+            border-radius: 50%;
+        }
+
+        span {
+            position: absolute;
+            font-size: 5rem;
+            font-weight: bolder;
+            top: -1rem;
+            left: 1rem;
+            color: rgba(0, 0, 0, 0.12);
+            font-family: 'Montserrat', sans-serif;
+        }
+    }
+
+    .details {
+        padding: 0 1rem;
+        margin-top: -2.5rem;
+        position: relative;
+
+        h2, h3, h4 {
+            text-align: center;
+            font-size: 1rem;
+            font-weight: lighter;
+        }
+
+        p:first-of-type:first-letter {
+            float: left;
+            font-family: Georgia;
+            font-size: 3rem;
+            line-height: 60px;
+            padding-top: 4px;
+            padding-right: 8px;
+            padding-left: 3px;
+        }
+    }
+}
+

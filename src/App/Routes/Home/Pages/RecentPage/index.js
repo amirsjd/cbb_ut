@@ -14,8 +14,6 @@ class Page extends PureComponent {
         speed: 0
     }
 
-
-
     render() {
 
         return (

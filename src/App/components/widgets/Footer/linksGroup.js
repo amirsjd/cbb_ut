@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const LinksGroup = (props) => {
     const renderList = (list) => 
         list.map((item,i) => 
-            <span className="footerPage-linksGroup-item" key={i}>
+            <span className="links-group-item" key={i}>
                 <Link to={item.to}>
                     {item.title}
                 </Link>
@@ -12,13 +12,13 @@ const LinksGroup = (props) => {
         )
 
     return (
-        <div className="footerPage-linksGroup-container" >
-            <span className="footerPage-linksGroup-header">
+        <div className="links-group-container" >
+            <span className="links-group-header">
                 <Link to={props.group.to}>
                     {props.group.title}
                 </Link>
             </span>
-            <div className="footerPage-linksGroup-list">
+            <div className="links-group-list">
                 {renderList(props.group.list)}
             </div>
         </div>

@@ -43,7 +43,7 @@ class Home extends PureComponent {
 
         this.props.context.updateStatus({
             ...this.props.context.state.status, 
-            ...this.status, ...this.config
+            ...this.status
         })
     }
 
@@ -74,11 +74,7 @@ class Home extends PureComponent {
                     ref={ref => this.parallax = ref}
                     pages={this.config.pages}
                     vertical
-                    scrolling={true}
-                    style={{
-                        width: '100vw',
-                        position: 'relative'
-                    }}>
+                    scrolling={true}>
 
                         <Pages 
                             {...this.config} 

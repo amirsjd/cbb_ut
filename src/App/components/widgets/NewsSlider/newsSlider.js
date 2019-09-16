@@ -24,10 +24,10 @@ class NewsSlider extends PureComponent {
     renderNews = (news) => (
         news && news.length > 0 ?
         news.map((item, i) => (
-            <Link to={`/news/${item.id}`} key={i} >
+            <Link to={'/news/'+item.id} key={i} >
                 <NewsSliderItem data={item} />
             </Link>
-        )) : null                                                       
+        )) : null                                                 
     )
     
     render() {

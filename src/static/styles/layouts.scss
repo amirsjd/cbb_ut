@@ -24,6 +24,8 @@
 }
 
 .roundButton {
+    @include roundButton;
+    
     &-filled {
         @include roundButton;
         background: rgb(255, 255, 255);

@@ -10,11 +10,27 @@
             .slider-content {
                 display: block;
                 width: 60vw;
-                height: 50vh;
+                height: 55vh;
                 background-image: radial-gradient(rgba(129, 203, 221, 0.95), rgba(82, 169, 190, 0.95));
                 border-radius: 1rem;
                 box-shadow: 0 0 24px 10px black;
-                padding: 1rem;
+                overflow: hidden;
+
+                .slider-item {
+                    position: absolute;
+                    //transition: all 1s ease;
+                    margin: 3rem;
+
+                    .title {
+                        font-size: 2rem;
+                        font-weight: bolder;
+                        font-family: 'Maven Pro', sans-serif;
+                    }
+                    
+                    .details {
+                        a { display: none }
+                    }
+                }
             }
             .slider-button {
                 z-index: 10;

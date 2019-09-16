@@ -1,20 +1,60 @@
-.SearchBar-container {
+
+@mixin search-bar {
+    width: max-content;
+    display: flex;
+    position: relative;
+}
+
+.SearchBar {
     position: relative;
     width: 100%;
     height: 100%;
-}
+    display: block;
 
-.SearchBar-collapse, .SearchBar-expand {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
+    .SearchBar-container {
+        position: absolute;
+        height: 30%;
+        padding: 0.5rem;
+        right: 5px;
+        top: 50%;
+        transform: translate(0,-50%);
+        border-radius: 1.5rem;
+        overflow: hidden;
+        
+        transition: all 1s ease;
+        display: block;
 
-.SearchBar-expand {
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+        }
+
+        i, button {
+            display: inline;
+            position: relative;
+            margin: 2px 3px;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1rem;
+            padding: 0;
+        }
+
+        input {
+            background: transparent;
+            border: none;
+            position: relative;
+            display: block;
+            color: white;
+            margin-left: 10px;
+        }
+
+        .expand {
+            @include search-bar();
+        }
     
-}
-
-.SearchBar-collapse {
-    
+        .collapse {
+            @include search-bar();
+        }
+    }
 }

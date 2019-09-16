@@ -15,7 +15,8 @@ export const CLEAR = 'CLEAR'
 
 export const CATEGORIES = {
     NEWS:       'NEWS',
-    BLOG:       'BLOG'
+    BLOG:       'BLOG',
+    EVENTS:     'EVENTS',
 }
 
 export const PAGES = {
@@ -31,7 +32,7 @@ export const PEOPLE = {
     FACULTY:    'FACULTY',
     STAFF:      'STAFF',
     PROFESSORS: 'PROFESSORS',
-    GRADUATES:  'GRADUATES'
+    GRADUATES:  'GRADUATES',
 }
 
 
@@ -127,9 +128,19 @@ export function getPageChildren(slug,page,per_page) {
     }
 }
 
-/* -- Search -- */
+export function getMedia(id) {
 
-//export function findPostsByCat(cat) 
+    const req = axios.get(
+        `${URL2}/media/${id}`, 
+        config
+    ).then(res => res.data)
+
+    return {
+        type: 'MEDIA',
+        id: id,
+        payload: req
+    }
+}
 
 /* cleaners */
 
@@ -139,3 +150,8 @@ export function clearLastChildren() {
         payload: null
     }
 }
+
+
+/* -- Search -- */
+
+//export function findPostsByCat(cat) 

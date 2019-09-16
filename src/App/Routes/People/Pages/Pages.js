@@ -1,7 +1,7 @@
 import React from 'react'
 
 import DescPage from './DescPage/descPage'
-import GroupsPage from './GroupsPage/groupsPage'
+import GroupsPage from './GroupsPage'
 
 const pagesList = [ DescPage, GroupsPage ]
 

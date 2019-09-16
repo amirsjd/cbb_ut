@@ -36,15 +36,21 @@ class FooterPage extends Component {
         const { address, email, phone, postalCode } = data.contact
         return (
             <PageLayout {...this.config} >
-                <div className="footerPage"> 
-                    <div className="footerPage-linksGroup">
+                <div className="footer-page"> 
+                    <div className="links-group">
                         {this.renderGroups()}
                     </div>
-                    <div className="footerPage-location">
-                        <div className="footerPage-map"
-                            style={{ backgroundImage: 'url("/assets/Home/maps.png")' }}>
+                    <div className="location">
+                        <div className="map-container">
+                            <div className="map"
+                                style={{ backgroundImage: 'url("/assets/Home/maps.png")' }}
+                            />
+                            <span>
+                                <i className="fas fa-search-location" />
+                                <> - We are here </>
+                            </span>
                         </div>
-                        <div className="footerPage-contact">
+                        <div className="contact">
                             <header>Contact Us</header>
                             <span>Address: <b>{address}</b></span>
                             <span>Phone: <b>{phone}</b></span>
@@ -52,7 +58,7 @@ class FooterPage extends Component {
                             <span>Postal Code: <b>{postalCode}</b></span>
                         </div>
                     </div>
-                    <div className="footerPage-branding">
+                    <div className="branding">
                         <div className="copyright">
                             Copyright © {CURRENT_YEAR} University of Tehran Bioinformatics Department
                         </div> 
