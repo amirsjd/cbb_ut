@@ -35,7 +35,7 @@ class Routes extends Component {
         return (
             <Layout>
                 <Switch>
-                    <Redirect from="/login" to="/wp-login" />
+                    <Redirect from="/login" to="/wp-admin" />
 
                     <Route path="/search" component={Search}/>
 
