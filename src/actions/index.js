@@ -6,7 +6,7 @@ const URL = '/wp-json'
 const URL2 = '/wp-json/wp/v2'
 const config = { 
     headers: {
-        //cookies: "__test=ba1c676a128b9e0efbc28807bfbf502e;",
+        
     },
     withCredentials: true, 
 }
