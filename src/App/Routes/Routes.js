@@ -61,7 +61,7 @@ class Routes extends Component {
                     
                     <Redirect from="/home" to="/" />
                     <Route path="/" exact component={withContext(Home)} />
-                    <Route component={NotFound} />
+                    <Route component={withContext(NotFound)} />
                 </Switch>
             </Layout>
         )
