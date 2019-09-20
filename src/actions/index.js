@@ -2,8 +2,8 @@ import axios from 'axios'
 
 /* Constants */
 
-const URL = 'http://cbb-ut.gigfa.com/wp-json'
-const URL2 = 'http://cbb-ut.gigfa.com/wp-json/wp/v2'
+const URL = '/wp-json'
+const URL2 = '/wp-json/wp/v2'
 const config = { 
     headers: {
         //cookies: "__test=ba1c676a128b9e0efbc28807bfbf502e;",
