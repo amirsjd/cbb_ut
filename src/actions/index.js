@@ -2,13 +2,20 @@ import axios from 'axios'
 
 /* Constants */
 
-const URL = '/wp-json'
-const URL2 = '/wp-json/wp/v2'
+const PORT = window.location.port
+
+
+const BASE_URL = (PORT === '8080') ? 
+    'http://cbb-ut.gigfa.com' : 
+    window.location.origin
+
+const URL = BASE_URL + '/wp-json'
+const URL2 = BASE_URL + '/wp-json/wp/v2'
 const config = { 
     headers: {
         
     },
-    withCredentials: true, 
+    withCredentials: true
 }
 
 export const CLEAR = 'CLEAR'
