@@ -34,7 +34,24 @@
     &-outline {
         @include roundButton;
         background: rgba(0,0,0,0);
-        color: rgb(255,255,255);
+        color: rgb(255, 255, 255);
+        transition: all 0.3s ease-out;
+
+        &:hover {
+            background: rgba(255,255,255,0.1); 
+            transition: all 0.3s ease-in;
+        }
+
+        &:active {
+            background-color: white;
+            color: black;
+        }
+
+        &:checked {
+            background-color: white;
+            color: black;
+            transition: none;
+        }
     }
 }
 

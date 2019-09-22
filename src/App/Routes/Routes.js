@@ -20,6 +20,9 @@ import Privacy from './Privacy/Privacy'
 import Sitemap from './Sitemap/Sitemap'
 import Search from './Search/Search'
 
+
+// I'm an ancient code... don't touch me >:(
+
 class Routes extends Component { 
 
     withContext = (Comp) => (props) => (
@@ -37,20 +40,20 @@ class Routes extends Component {
                 <Switch>
                     <Redirect from="/login" to="/wp-admin" />
 
-                    <Route path="/search" component={Search}/>
+                    <Route path="/search"   component={Search}/>
 
-                    <Route path="/blog/posts/:id" component={withContext(Blog)} />
-                    <Route path="/blog/pages/:i" component={withContext(Blog)} />
-                    <Route path="/blog" exact component={withContext(Blog)} />
+                    <Route path="/blog/posts/:id"   component={withContext(Blog)} />
+                    <Route path="/blog/pages/:i"    component={withContext(Blog)} />
+                    <Route path="/blog" exact       component={withContext(Blog)} />
                     
-                    <Route path="/news/:id" component={News} />
-                    <Route path="/news" exact component={News} />
+                    <Route path="/news/:id"     component={News} />
+                    <Route path="/news" exact   component={News} />
                     
-                    <Route path="/tools/:slug" component={Tools} />
-                    <Route path="/tools" exact component={Tools} />
+                    <Route path="/tools/:slug"  component={Tools} />
+                    <Route path="/tools" exact  component={Tools} />
 
                     <Route path="/person/:slug" component={Person} />
-                    <Route path={people_routes + '/:page'} component={withContext(PeopleGroup)} />
+                    <Route path={ people_routes + '/:page' } component={withContext(PeopleGroup)} />
                     <Redirect from={people_routes} to={people_routes + '/1'} />
                     <Route path="/people" exact component={withContext(People)} />
 

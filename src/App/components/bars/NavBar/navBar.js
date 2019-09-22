@@ -21,12 +21,13 @@ class NavBar extends PureComponent {
             <Transition
                 items={this.props.isScrolled}
                 from={{ 
-                    backgroundColor: 'rgba(0,0,0,1)', 
+                    backgroundColor: 'rgba(0,0,0,0.2)', 
                     width: '100%', height: '100%', 
                     position: 'absolute', 
-                    opacity: 0
+                    opacity: 0,
+                    backdropFilter: 'blur(5px) brightness(0.5)'
                 }}
-                enter={{ opacity: 0.5 }}
+                enter={{ opacity: 1 }}
                 leave={{ opacity: 0 }} >
         
             { show => show && (props => <div style={props} />) }

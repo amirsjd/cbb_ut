@@ -53,9 +53,9 @@ class PeopleGroup extends PureComponent {
         groups.map((group, i) => 
             <NavLink key={i}
                 className="nav-link"
-                to={'/people/' + group}
-                activeClassName="active">
-
+                to={ '/people/' + group }
+                activeClassName="active"
+            >
                 {group}
             </NavLink>
         )
@@ -64,7 +64,8 @@ class PeopleGroup extends PureComponent {
         children && children.length > 0 ?
         children.map((child,i) => 
             <Link key={i} className="person-card"
-                to={'/person/'+child.slug}>
+                to={ '/person/' + child.slug }
+            >
                 <PersonCard data={child} id={i} key={i} />
             </Link>
         ) : null

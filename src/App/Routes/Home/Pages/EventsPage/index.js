@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import {Transition} from 'react-spring/renderprops'
+import { Transition, config as springConfig } from 'react-spring/renderprops'
 
 import { getPostsByCat, CATEGORIES } from '../../../../../actions'
 
@@ -14,6 +14,8 @@ const PER_PAGE = 5
 
 class Page extends PureComponent {
 
+    toDown = true
+
     config = {
         offset: this.props.offset,
         speed: 0
@@ -24,6 +26,7 @@ class Page extends PureComponent {
     }
 
     handlePrev = () => {
+        this.toDown = false
         const { data } = this.props
         const { index } = this.state
         this.setState({ 
@@ -32,6 +35,7 @@ class Page extends PureComponent {
     }
 
     handleNext = () => {
+        this.toDown = true
         const { data } = this.props
         const { index } = this.state
         this.setState({ 
@@ -49,10 +53,11 @@ class Page extends PureComponent {
 
         return data && data.length > 0 && data.map((item,i) => 
             <Transition key={i}
+                config={springConfig.slow}
                 items={(i === index)}
-                from={{ opacity: 0, top: -1000 }}
+                from={{ opacity: 0, top: (this.toDown? -300 : 300) }}
                 enter={{ opacity: 1, top: 0 }}
-                leave={{ opacity: 0, top: 1000 }}>
+                leave={{ opacity: 0, top: (this.toDown? 300 : -300) }}>
                 {show => show && (props => 
                     <div 
                         className="slider-item "

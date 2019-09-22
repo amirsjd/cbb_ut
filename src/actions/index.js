@@ -4,7 +4,6 @@ import axios from 'axios'
 
 const PORT = window.location.port
 
-
 const BASE_URL = (PORT === '8080') ? 
     'http://cbb-ut.gigfa.com' : 
     window.location.origin
