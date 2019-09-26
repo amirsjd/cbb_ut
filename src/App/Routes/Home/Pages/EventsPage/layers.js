@@ -6,7 +6,7 @@ export default [
         children:
             <div style={{
                 width: '100%', height: '100%',
-                backgroundImage: 'url("/assets/Home/bg-2.jpg")',
+                backgroundImage: 'url("/assets/home/bg-2.jpg")',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 filter: 'brightness(10%) blur(3px)',

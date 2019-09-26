@@ -6,7 +6,7 @@ export default [
         children:
             <div style={{
                 width: '140%', height: '140%',
-                backgroundImage: 'url("/assets/Home/bg-0.jpg")',
+                backgroundImage: 'url("/assets/home/bg-0.jpg")',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 filter: 'brightness(75%) blur(10px)',
@@ -19,7 +19,7 @@ export default [
     {
         speed: -0.7,
         children: 
-            <img alt="" src="/assets/Home/cell.png"
+            <img alt="" src="/assets/home/cell.png"
                 style={{
                     position: 'absolute',
                     left: 'calc(70% - 4em)',
